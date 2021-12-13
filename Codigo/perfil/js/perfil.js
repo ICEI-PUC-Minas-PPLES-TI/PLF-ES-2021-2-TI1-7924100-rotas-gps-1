@@ -32,6 +32,10 @@ function perfil(data) {
                                     <span><i class="fas fa-envelope"></i> Email</span>
                                     : ${data.email}
                                 </div>
+                                <div id="enderecosCadastrados">
+                                    <span><i class="fas fa-map-marker-alt"></i> Endereços Cadastrados</span>
+                                    : ${data.endCadastrados}
+                                </div>
                                 <div id="pontos">
                                     <span><i class="fas fa-ticket-alt"></i> Pontos</span>
                                     : ${data.pontos}

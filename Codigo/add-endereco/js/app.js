@@ -371,10 +371,23 @@ function insertAddress(endereco) {
     // Identifica a posição do JSON do usuário logado
     let index = usuariosJSON.user.map(obj => obj.id).indexOf(userLogin.id);
 
+    // Identifica a quantidade de endereços cadastrados pelo usuário
+    let totalAddressCadastrados = 0;
+
+    for (var i = 0; i < stores.features.length; i++) {
+        var propreties = stores.features[i].properties;
+        if (propreties.id == userLogin.id)
+            totalAddressCadastrados++;
+    }
+
+    console.log(totalAddressCadastrados)
+
     // Adiciona os pontos no JSON do usuário por adicionar um novo endereço no mapa
     if (index >= 0) {
         usuariosJSON.user[index].pontos += PNTS_AddAddress;
         userLogin.pontos += PNTS_AddAddress;
+        usuariosJSON.user[index].endCadastrados = totalAddressCadastrados;
+        userLogin.endCadastrados = totalAddressCadastrados;
 
         localStorage.setItem('db_usuarios', JSON.stringify(usuariosJSON));
         localStorage.setItem('usuarioCorrente', JSON.stringify(userLogin));
@@ -410,23 +423,32 @@ function updateAddress(id, endereco) {
 }
 
 function deleteAddress(id) {
-    //Deleta todo o Array selecionado
-    stores.features.splice(id, 1);
-
     // Identifica a posição do JSON do usuário logado
     let index = usuariosJSON.user.map(obj => obj.id).indexOf(userLogin.id);
+
+    // Subtrai a quantidade de endereços cadastrados pelo usuário
+    let totalAddressCadastrados = usuariosJSON.user[index].endCadastrados;
+
+    if (totalAddressCadastrados)
+        totalAddressCadastrados--;
+    console.log(totalAddressCadastrados)
 
     // Subtrai os pontos no JSON do usuário por apagar uma endereço cadastrado
     if (index >= 0) {
         if (userLogin.pontos > 0) {
             usuariosJSON.user[index].pontos -= PNTS_AddAddress;
             userLogin.pontos -= PNTS_AddAddress;
+            usuariosJSON.user[index].endCadastrados = totalAddressCadastrados;
+            userLogin.endCadastrados = totalAddressCadastrados;
 
             // Atualiza os dados no Local Storage
             localStorage.setItem('db_usuarios', JSON.stringify(usuariosJSON));
             localStorage.setItem('usuarioCorrente', JSON.stringify(userLogin));
         }
     }
+
+    // Deleta todo o Array selecionado
+    stores.features.splice(id, 1);
 
     // Atualiza os dados no Local Storage
     localStorage.setItem('db_address', JSON.stringify(stores));
