@@ -8,7 +8,7 @@ foi utilizado para hospedagem do repositório `master`, que é o principal no qu
 
 O projeto segue a seguinte convenção para o nome de branchs:
 
-- `master`: versão estável já testada do software
+- `master`: versão estável já testada do software, a versão de produção
 - `unstable`: versão já testada do software, porém instável
 - `testing`: versão em testes do software
 - `dev`: versão de desenvolvimento do software
@@ -21,11 +21,7 @@ etiquetas:
 - `nomes`: nome da cada integrante responsável pela entrega
 - `sprint x`: a qual entrega aquele artefato se refere
 
-> O projeto foi configurado utilizando a ferramenta Git, em que a branch `dev` era
-> utilizada como uma versão alternativa para testes e commits iniciais, e posteriormente, na branch
-> `master`, integramos todo o projeto final na mesma merge.
-
 ## Hospedagem
 
-> A projeto foi lançado na plataforma de hospedagem do próprio GitHub, o GitHub Pages, que consiste em um serviço que compila os arquivos de HTML, CSS e JavaScript dos próprios repositórios adicionados ao GitHub.
+> O projeto foi lançado na plataforma de hospedagem do próprio GitHub, o GitHub Pages, que consiste em um serviço que compila os arquivos de HTML, CSS e JavaScript dos próprios repositórios adicionados ao GitHub.
 > - [GitHub Pages](https://pages.github.com/)
