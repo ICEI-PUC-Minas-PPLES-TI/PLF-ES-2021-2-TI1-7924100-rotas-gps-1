@@ -40,14 +40,13 @@ function loginUser(username, senha) {
 
         // Se encontrou login, carrega usuário corrente e salva no Session Storage
         if (username == usuario.username && senha == usuario.senha) {
-            console.log("username =", username, "senha =", senha)
             usuarioCorrente.id = usuario.id;
             usuarioCorrente.username = usuario.username;
             usuarioCorrente.nome = usuario.nome;
             usuarioCorrente.sobrenome = usuario.sobrenome;
             usuarioCorrente.email = usuario.email;
             usuarioCorrente.senha = usuario.senha;
-            usuarioCorrente.endereco = usuario.endereco;
+            usuarioCorrente.endereco = usuario.address;
             usuarioCorrente.pontos = usuario.pontos;
 
             // Salva os dados do usuário corrente no Session Storage, mas antes converte para string
