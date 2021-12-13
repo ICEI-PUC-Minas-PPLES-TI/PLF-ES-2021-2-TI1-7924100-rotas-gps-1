@@ -13,7 +13,7 @@ foi utilizado para hospedagem do repositório `upstream`.
 
 O projeto segue a seguinte convenção para o nome de branchs:
 
-- `master`: versão estável já testada do software
+- `master`: versão estável já testada do software, a versão de produção
 - `unstable`: versão já testada do software, porém instável
 - `testing`: versão em testes do software
 - `dev`: versão de desenvolvimento do software
@@ -29,11 +29,6 @@ etiquetas:
 > versionamento escolhida. Exponha como a gerência de tags, merges,
 > commits e branchs é realizada. Discuta como a gerência de issues foi
 > realizada.
->
-> **Links Úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
-
 ## Hospedagem
 
 > Explique como a hospedagem e o lançamento da plataforma foi feita.
