@@ -154,6 +154,14 @@ i.fas {
     display: none;
 }
 
+#location.hidden {
+    display: none;
+}
+
+#pontos.hidden {
+    display: none;
+}
+
 
 /* Edição de informações do Perfil */
 

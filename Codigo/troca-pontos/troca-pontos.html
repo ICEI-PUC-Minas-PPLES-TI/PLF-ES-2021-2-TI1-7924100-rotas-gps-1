@@ -14,9 +14,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/c89ded80b6.js" crossorigin="anonymous"></script>
+
+    <!-- Boxicons -->
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
+
+    <header class="cabecalho">
+        <div class="header">
+            <a id="logo" href="#">
+                <img src="./svg/Logo-Klug-2-branco.svg" id="logo-menu" alt="Logo">
+                <span id="nomelogo">KLUG </span>
+                <span id="localpagina">| Perfil</span>
+            </a>
+            <nav id="nav">
+                <button onclick="toggleMenu()" id="btn-mobile" aria-controls="menu" aria-haspopup="true"
+                    aria-label="Abrir Menu"><span id="hamburguer"></span></button>
+                <ul id="menu" role="menu">
+                    <li><a href="../rotas/rotas.html">Home</a>
+                        <i class="bx bxs-home"></i>
+                    </li>
+                    <li><a href="../add-endereco/index.html">Adicionar Endereço</a> <i
+                            class="fas fa-map-marker-alt"></i></li>
+                    <li><a id="loginTrocaPonto" href="../troca-pontos/troca-pontos.html">Trocar Pontos</a> <i
+                            class="fas fa-ticket-alt"></i></li>
+                    <li><a href="../suporte/pagina-inicial/pagina-inicial.html">Suporte</a> <i
+                            class="fas fa-wrench"></i></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <header>
         <div class="container-header">
             <img id="foto-usuario" alt="Foto de perfil do usuário">
@@ -40,7 +77,7 @@
         <p><strong>Klug</strong>, sua melhor rota</p>
         </p>
     </footer>
-    <script src="./js/scripts.js" type="module"></script>
+    <script src="./js/scripts.js"></script>
 </body>
 
 </html>

@@ -1,78 +1,79 @@
+let produtosTroca = [
+  {
+    imagem: "./imgs/cinema.jpg",
+    titulo: "R$ 5,00 de desconto em cinemas",
+    descricao: "Tenha descontos para assistir seus filmes favoritos",
+    preco: 40,
+  },
+  {
+    imagem: "./imgs/ingresso.jpg",
+    titulo: "Sorteio par de ingressos",
+    descricao:
+      "Participe do sorteio de um par de ingressos para ver Transformers",
+    preco: 20,
+  },
+  {
+    imagem: "./imgs/gift-card-music.jpg",
+    titulo: "Gift Card de R$10",
+    descricao:
+      "Troque seus pontos por um gift card de R$10 em seu serviço de streaming de música favorito",
+    preco: 60,
+  },
+  {
+    imagem: "./imgs/bike.jpg",
+    titulo: "Desconto de R$10 em serviços de bike",
+    descricao:
+      "Troque seus pontos por desconto em serviços de mobilidade urbana que usem bikes. Além de fazer bem para a saúde, ajuda o meio ambiente.",
+    preco: 20,
+  },
+  {
+    imagem: "./imgs/pet.jpg",
+    titulo: "Banho no seu pet",
+    descricao:
+      "Troque seus pontos por um banho em seu pet. As pets shops são parceiras de nossa plataforma e irão tratar seu amigo com muito carinho.",
+    preco: 400,
+  },
+];
+
 // função que lê os dados do localStorage
 function leDados() {
   // pega os dados do localStorage
-  let strDados = localStorage.getItem("db");
+  let strDados = localStorage.getItem("usuarioCorrente");
   // cria o objeto de dados
-  let objDados = {};
+  let dadosUser = {};
 
   // confere se existe algo no localStorage
   if (strDados) {
     // caso tenha, coloca dentro da variável de dados
-    objDados = JSON.parse(strDados);
+    dadosUser = JSON.parse(strDados);
   } else {
     // caso não tenha, cria o próprio objeto com os dados
-    objDados = {
-      usuario: [
-        {
-          nome: "Nícolas Carneiro",
-          foto: "https://www.placecage.com/300/300",
-          pontos: 600,
-        },
-      ],
-
-      produtosTrocas: [
-        {
-          imagem: "./imgs/cinema.jpg",
-          titulo: "R$ 5,00 de desconto em cinemas",
-          descricao: "Tenha descontos para assistir seus filmes favoritos",
-          preco: 40,
-        },
-        {
-          imagem: "./imgs/ingresso.jpg",
-          titulo: "Sorteio par de ingressos",
-          descricao:
-            "Participe do sorteio de um par de ingressos para ver Transformers",
-          preco: 20,
-        },
-        {
-          imagem: "./imgs/gift-card-music.jpg",
-          titulo: "Gift Card de R$10",
-          descricao:
-            "Troque seus pontos por um gift card de R$10 em seu serviço de streaming de música favorito",
-          preco: 60,
-        },
-        {
-          imagem: "./imgs/bike.jpg",
-          titulo: "Desconto de R$10 em serviços de bike",
-          descricao:
-            "Troque seus pontos por desconto em serviços de mobilidade urbana que usem bikes. Além de fazer bem para a saúde, ajuda o meio ambiente.",
-          preco: 20,
-        },
-        {
-          imagem: "./imgs/pet.jpg",
-          titulo: "Banho no seu pet",
-          descricao:
-            "Troque seus pontos por um banho em seu pet. As pets shops são parceiras de nossa plataforma e irão tratar seu amigo com muito carinho.",
-          preco: 400,
-        },
-      ],
+    dadosUser = {
+      email: "nickzada@gmail.com",
+      id: "977d97ac-890b-4e20-88c5-902580136c81",
+      nome: "Nícolas",
+      pontos: 600,
+      senha: "12345678",
+      sobrenome: "Carneiro",
+      username: "admin1234",
+      foto: "https://www.placecage.com/300/300"
     };
   }
 
   // mostra os dados no console
-  console.log(objDados);
+  console.log(dadosUser);
 
   // chama a função que salva os dados do localStorage
-  salvaDados(objDados);
+  salvaDados(dadosUser);
 
   // retorna o objeto, quando é chamada
-  return objDados;
+  return dadosUser;
 }
 
 // função que salva os dados no localStorage
 function salvaDados(dados) {
   // salva os dados passados por parâmetro no localStorage
-  localStorage.setItem("db", JSON.stringify(dados));
+  localStorage.setItem("usuarioCorrente", JSON.stringify(dados));
 }
 
 // função que imprime os dados na tela
@@ -89,23 +90,23 @@ function imprimeDados() {
   let conteudoTroca = "";
 
   // define o objeto de dados como o retorno da função de ler dados
-  let objDados = leDados();
+  let dadosUser = leDados();
 
   // coloca a frase abaixo com o nome do usuário no h1 do HTML
-  nomeUsuario.innerHTML = `Olá, ${objDados.usuario[0].nome}`;
+  nomeUsuario.innerHTML = `Olá, ${dadosUser.nome}`;
   // define o caminho da foto do usuário como o salvo no objeto
-  fotoUsuario.src = `${objDados.usuario[0].foto}`;
+  fotoUsuario.src = `${dadosUser.foto}`;
   // carrega os pontos do usuário na tela
-  pontosUsuarios.innerHTML = `${objDados.usuario[0].pontos} pontos`;
+  pontosUsuarios.innerHTML = `${dadosUser.pontos} pontos`;
 
   // executa item por item e salva dentro da variável
-  for (let i = 0; i < objDados.produtosTrocas.length; i++) {
+  for (let i = 0; i < produtosTroca.length; i++) {
     conteudoTroca += `
             <article class="item">
-              <img src=${objDados.produtosTrocas[i].imagem} alt="Imagem ilustrativa">
-              <span>${objDados.produtosTrocas[i].titulo}</span>
-              <p>${objDados.produtosTrocas[i].descricao}</p>
-              <span>Preço: ${objDados.produtosTrocas[i].preco} pontos</span>
+              <img src=${produtosTroca[i].imagem} alt="Imagem ilustrativa">
+              <span>${produtosTroca[i].titulo}</span>
+              <p>${produtosTroca[i].descricao}</p>
+              <span>Preço: ${produtosTroca[i].preco} pontos</span>
               <button id="button">Trocar</button>
               </article>
     `;
@@ -122,33 +123,33 @@ function imprimeDados() {
     // adiciona um Event Listener em cada um deles
     botoes[i].addEventListener("click", function () {
       // confere se o valor do item da a troca é maior do que o saldo do usuário
-      if (objDados.produtosTrocas[i].preco > objDados.usuario[0].pontos) {
+      if (dadosUser.produtosTrocas[i].preco > dadosUser.pontos) {
         // caso seja, exibe uma mensagem de alerta avisando o usuário
         alert(
           "Saldo insuficiente para trocar " +
             '"' +
-            objDados.produtosTrocas[i].titulo +
+            dadosUser.produtosTrocas[i].titulo +
             '"'
         );
       } else {
         // caso tenha saldo, mostra o produto e o valor dele
         alert(
           '"' +
-            objDados.produtosTrocas[i].titulo +
+            dadosUser.produtosTrocas[i].titulo +
             '"' +
             " trocado por " +
-            objDados.produtosTrocas[i].preco +
+            dadosUser.produtosTrocas[i].preco +
             " pontos"
         );
 
         // chama a função que troca pontos, passando o objeto de dados e a posição do botão
-        trocaPontos(objDados, i);
+        trocaPontos(dadosUser, i);
       }
     });
   }
 
   // chama a função que verifica o saldo do usuário
-  verificaSaldo(objDados, botoes);
+  verificaSaldo(dadosUser, botoes);
 
   // mostra os botões no console, apenas para controle
   console.log(botoes);
@@ -160,13 +161,13 @@ function trocaPontos(dados, botao) {
   let valorDescontado = dados.produtosTrocas[botao].preco;
 
   // pega o valor de pontos que o usuário tem atualmente
-  let valorAtual = dados.usuario[0].pontos;
+  let valorAtual = dados.pontos;
 
   // desconta os pontos do usuário do preço da troca
   valorAtual -= valorDescontado;
 
   // define o valor de pontos do usuário como o novo valor
-  dados.usuario[0].pontos = valorAtual;
+  dados.pontos = valorAtual;
 
   // pega o elemento de pontos na tela
   let pontosUsuarios = document.getElementById("pontos-usuario");
@@ -184,7 +185,7 @@ function trocaPontos(dados, botao) {
 // função que verifica o saldo do usuário, apenas por questões estéticas
 function verificaSaldo(dados, botoes) {
   // pega os pontos que o usuário tem atualmente
-  let pontos = dados.usuario[0].pontos;
+  let pontos = dados.pontos;
 
   // confere se o valor dos pontos é menor do que 20 (troca mais barata)
   if (pontos < 20) {
@@ -192,6 +193,16 @@ function verificaSaldo(dados, botoes) {
     document.getElementById("container-pontos").style.backgroundColor =
       "#e92929";
   }
+}
+
+function toggleMenu() {
+  const nav = document.getElementById("nav");
+  const main = document.querySelector(".main");
+  const footer = document.querySelector(".footer");
+
+  nav.classList.toggle('active');
+  main.classList.toggle('active');
+  footer.classList.toggle('active');
 }
 
 // quando todos os itens da tela terminas de ser carregados, chama a função imprimeDados

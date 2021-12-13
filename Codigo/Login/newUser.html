@@ -30,15 +30,16 @@
 <body>
     <img src="./images/Logo-Klug-1-branco.svg" alt="logo" class="logo">
     <div class="newUserClass">
-        <form id="newUserForm" class="form">
+        <form id="newUserForm" class="form" method="submit">
             <h3>Novo usuário</h3>
 
             <div class="form-group">
+                <input type="text" name="txt_user" id="txt_user" class="form-control" placeholder="Nome de Usuáio" minlength="8" maxlength="25" required>
                 <input type="text" name="txt_nome" id="txt_nome" class="form-control" placeholder="Nome" required>
                 <input type="text" name="txt_sobrenome" id="txt_sobrenome" class="form-control" placeholder="Sobrenome">
                 <input type="email" name="txt_email" id="txt_email" class="form-control" placeholder="Email" required>
-                <input type="password" name="txt_senha" id="txt_senha" class="form-control" placeholder="Senha" required>
-                <input type="password" name="txt_senha2" id="txt_senha2" class="form-control" placeholder="Confirmar senha" required>
+                <input type="password" name="txt_senha" id="txt_senha" class="form-control" placeholder="Senha" minlength="8" maxlength="15" required>
+                <input type="password" name="txt_senha2" id="txt_senha2" class="form-control" placeholder="Confirmar senha" minlength="8" maxlength="15" required>
             </div>
 
             <div class="hudBtns">

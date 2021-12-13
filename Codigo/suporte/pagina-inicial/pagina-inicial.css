@@ -91,6 +91,10 @@ nav a:hover,
     font-weight: 500;
 }
 
+#lineTrocaPontos.hidden {
+    display: none;
+}
+
 
 /*Fim Menu - Desktop*/
 

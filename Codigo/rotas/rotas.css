@@ -161,6 +161,10 @@ nav a:hover,
     display: none;
 }
 
+#lineTrocaPontos.hidden {
+    display: none;
+}
+
 
 /* Fim Menu */
 
