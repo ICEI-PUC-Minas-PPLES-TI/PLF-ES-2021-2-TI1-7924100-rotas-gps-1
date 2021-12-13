@@ -93,8 +93,6 @@ nav a:hover,
   align-items: center;
   list-style: none;
   gap: 1.5rem;
-
-  background-color: #fff;
 }
 
 #menu a {
@@ -278,6 +276,8 @@ footer.footer-container {
     top: 60px;
     list-style: none;
     transition: all 0.4s;
+
+    background-color: #fff;
   }
   #menu li {
     display: flex;
