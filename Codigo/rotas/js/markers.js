@@ -89,8 +89,8 @@ if (!stores)
     stores = db_stores;
 
 // Link do perfil do usuário
-const LOGIN_URL = "https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/Login/login.html";
-const PERFIL_URL = "https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/perfil/perfilPrincipal.html";
+const LOGIN_URL = "../Login/login.html";
+const PERFIL_URL = "../perfil/perfilPrincipal.html";
 
 // Pegar os dados do usuário logado
 var userLogin = JSON.parse(localStorage.getItem('usuarioCorrente'));
@@ -100,7 +100,7 @@ $(document).ready(function() {
     localStorage.setItem('link', JSON.stringify(""));
 
     const login = document.querySelector('#loginProfile');
-    const trocaPonto = document.querySelector('#loginTrocaPonto');
+    const trocaPonto = document.querySelector('#lineTrocaPontos');
     const btnMobile = document.querySelector('#btn-mobile');
 
     // Se o usuário não estiver logado, no menu aparecerá a palavra "Entrar"
@@ -115,7 +115,7 @@ $(document).ready(function() {
     }
 
     login.addEventListener('click', function() {
-        localStorage.setItem('link', JSON.stringify("https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/add-enderecos/index.html"));
+        localStorage.setItem('link', JSON.stringify("../add-endereco/index.html"));
     })
 
     btnMobile.onclick = () => {

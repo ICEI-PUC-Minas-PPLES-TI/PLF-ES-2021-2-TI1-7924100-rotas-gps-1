@@ -32,6 +32,10 @@ function perfil(data) {
                                     <span><i class="fas fa-envelope"></i> Email</span>
                                     : ${data.email}
                                 </div>
+                                <div id="pontos">
+                                    <span><i class="fas fa-ticket-alt"></i> Pontos</span>
+                                    : ${data.pontos}
+                                </div>
                             </div>
                         </div>`);
 
@@ -57,8 +61,11 @@ function exibePerfil(user) {
     $('#txt_email').val(email);
 
     // Verifica se o atributo tem alguma informação. Caso contrário, no input para o enderço não é preenchido
-    if ((address != undefined) || (address != null) || (address != ''))
+    if (address != undefined && address != '') {
+        console.log("address =", address);
         $('#txt_address').val(address);
+    } else
+        $('#txt_address').val();
 }
 
 function toggleMenu() {

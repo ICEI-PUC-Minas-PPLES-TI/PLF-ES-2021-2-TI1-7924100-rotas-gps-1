@@ -1,4 +1,4 @@
-const PERFIL_URL = "https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/perfil/perfilPrincipal.html";
+const PERFIL_URL = "../perfil/perfilPrincipal.html";
 var link = JSON.parse(localStorage.getItem('link'));
 
 // Declara uma função para processar o formulário de login
@@ -6,15 +6,21 @@ function processaFormLogin(event) {
     //Faz a verificação individual de cada campo do formulário
     validacaoForm();
 
-    // // Verfica se o formulário está preenchido corretamente
-    if (!$('#loginForm')[0].checkValidity()) {
-        event.preventDefault();
-        return;
-    }
-
     // Obtem os dados de login e senha a partir do formulário de login
     var username = $('#username').val();
     var password = $('#password').val();
+
+    // Verfica se o formulário está preenchido corretamente
+    if (!$('#loginForm')[0].checkValidity()) {
+        if (username.length <= 8 || username.length >= 25)
+            alert('Nome de usuário menor que 8 caracteres');
+        else if (password.length <= 8 || password.length >= 15)
+            alert('Senha menor que 8 caracteres');
+        else
+            alert('Dados incorretos');
+        event.preventDefault();
+        return;
+    }
 
     // Valida login e se estiver ok, redireciona para tela inicial da aplicação
     if (username && password) {
@@ -23,7 +29,7 @@ function processaFormLogin(event) {
         if (!resultadoLogin) {
             // Cancela a submissão do formulário para tratar sem fazer refresh da tela
             event.preventDefault();
-            displayMessage('Usuário ou senha incorretos');
+            alert('Nome de usuário ou senha incorretos');
         }
     }
 }
@@ -46,7 +52,7 @@ $(document).ready(function() {
     const btnEntrar = document.querySelector('#btn-entrar');
 
     if (link == '' || link == null)
-        btnEntrar.setAttribute('href', "https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/rotas/rotas.html");
+        btnEntrar.setAttribute('href', "../rotas/rotas.html");
 
     // Associa a funçao processaFormLogin  formulário adicionado um manipulador do evento submit
     document.getElementById('btnEntrar').addEventListener('click', processaFormLogin);

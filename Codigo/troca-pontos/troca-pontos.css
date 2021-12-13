@@ -24,11 +24,92 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+/* Menu */
+
+.header {
+  width: 100%;
+  padding: 15px 15%;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(
+    -45deg,
+    rgba(88, 195, 255, 1) 0,
+    rgba(0, 77, 230, 1) 40%,
+    rgba(0, 59, 177, 1) 100%
+  );
+}
+
+#btn-mobile {
+  display: none;
+}
+
+#nav {
+  margin: 0 0 0 auto;
+}
+
+header a,
+#nome-perfil {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+nav a:hover,
+#nome-perfil:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+#logo img {
+  width: 30px;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+#logo:hover {
+  color: #fff;
+}
+
+#nomelogo {
+  margin: 3px 5px 0 10px;
+  font-family: "Intro", sans-serif;
+  color: white;
+}
+
+#menu {
+  margin: 0 0 3px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+#menu a {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#menu li i {
+  display: none;
+}
+
 header .container-header {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 1rem;
+  margin-top: 3.5rem;
 
   background-color: #fbd133;
   color: var(--bg);
@@ -146,5 +227,356 @@ footer.footer-container {
     flex-direction: column;
     gap: 2rem;
     text-align: center;
+  }
+  /* Menu */
+  .header {
+    padding: 15px 5% !important;
+    margin: 0;
+    position: fixed;
+    background: linear-gradient(
+      -45deg,
+      rgb(88, 195, 255) 0,
+      rgb(0, 77, 230) 40%,
+      rgb(0, 59, 177) 100%
+    );
+    z-index: 1000;
+  }
+  #nav {
+    margin: 0 0 0 auto;
+  }
+  header a {
+    color: #fff;
+    text-decoration: none;
+  }
+  #logo img {
+    width: 30px;
+  }
+  #logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+  }
+  #nomelogo {
+    font-size: 15px;
+    font-weight: bolder;
+    margin-left: 5px;
+  }
+  #localpagina,
+  #nome-perfil {
+    display: none;
+  }
+  #menu {
+    display: block;
+    position: absolute;
+    padding: 50% 0;
+    z-index: 1000;
+    height: calc(100vh - 60px);
+    right: -200px;
+    top: 60px;
+    list-style: none;
+    transition: all 0.4s;
+
+    background-color: #fff;
+  }
+  #menu li {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  #menu li a {
+    text-align: end;
+    font-size: 14px;
+    color: #222;
+  }
+  #menu i,
+  #menu .bx {
+    text-align: end;
+    display: block;
+    font-size: 18px;
+    width: 30px;
+  }
+  #nav.active #menu {
+    width: 55%;
+    right: 0;
+  }
+  .main,
+  .footer {
+    transition: all 0.3s;
+    box-shadow: 2px -15px 10px rgba(0, 0, 0, 0.1);
+  }
+  .main.active,
+  .footer.active {
+    transform: translateX(-55%);
+  }
+  #btn-mobile {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: white;
+    margin: 0 0 0 auto;
+    gap: 0.5rem;
+  }
+  #hamburguer {
+    margin-top: -2px;
+    display: block;
+    width: 20px;
+    border-top: 1px solid;
+  }
+  #hamburguer::before,
+  #hamburguer::after {
+    content: "";
+    display: block;
+    width: 20px;
+    border-top: 1px solid;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+  #nav.active.active #hamburguer {
+    border-top-color: transparent;
+  }
+  #nav.active.active #hamburguer::before {
+    transform: rotate(135deg);
+  }
+  #nav.active.active #hamburguer::after {
+    transform: rotate(-135deg);
+    top: -6px;
+  }
+  #menu li i {
+    display: block;
+  }
+}
+
+@media (max-width: 799px) {
+  /* Pesquisa */
+  #barra-pesquisa {
+    width: 90%;
+  }
+  /* Principais Problemas */
+  div.texto-problemas {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto;
+    text-align: center;
+    width: 90%;
+  }
+  .texto-problemas a {
+    padding: 25px 0;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    color: #3e97ff;
+    letter-spacing: 1px;
+  }
+  #lv {
+    height: 1px;
+    width: 70%;
+    border-right: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  /* Link Editor Rotas */
+  .icone-editar img {
+    margin: 20px auto;
+    width: 70px;
+    transform: scaleX(-1);
+  }
+  .link-editor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .conteudo-editar h4 {
+    margin-top: 10px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+  }
+  #texto-editar {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 17px;
+    font-family: "Montserrat", sans-serif;
+  }
+  #link-para-editar {
+    margin-top: 25px;
+    margin-bottom: 70px;
+    text-align: center;
+  }
+  #link-para-editar a {
+    font-size: 17px;
+    font-family: "Montserrat", sans-serif;
+    color: #3e97ff;
+    text-decoration: none;
+  }
+  #seta {
+    padding-left: 7px;
+  }
+  /* Sobre KLUG */
+  .texto-sobre-klug {
+    width: 90%;
+  }
+  /* Fale Conosco */
+  div.formulario-fale-conosco {
+    width: 90%;
+    margin: 0 auto;
+  }
+  /* Rodapé */
+  .principais-topicos {
+    padding: 20px 10% !important;
+  }
+  .final-footer {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+  .logo-redes {
+    display: none;
+  }
+  .copyright {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 5%;
+    margin-bottom: 30px;
+  }
+  .copyright-texto p {
+    text-align: center;
+    font-size: 13px;
+  }
+  div.logo-redes {
+    display: none !important;
+  }
+  #linha-footer {
+    display: none;
+  }
+  .pais {
+    display: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Menu */
+  .header {
+    padding: 15px 5% !important;
+    margin: 0;
+    position: fixed;
+    z-index: 1000;
+  }
+  #nav {
+    margin: 0 0 0 auto;
+  }
+  header a {
+    color: #fff;
+    text-decoration: none;
+  }
+  #logo img {
+    width: 30px;
+  }
+  #logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+  }
+  #nomelogo {
+    font-size: 15px;
+    font-weight: bolder;
+    margin-left: 5px;
+  }
+  #localpagina,
+  #nome-perfil {
+    display: none;
+  }
+  #menu {
+    display: block;
+    position: absolute;
+    padding: 50% 0;
+    z-index: 1000;
+    height: calc(100vh - 60px);
+    right: -200px;
+    top: 60px;
+    list-style: none;
+    transition: all 0.4s;
+    backdrop-filter: blur(3px);
+  }
+  #menu li {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  #menu li a {
+    text-align: end;
+    font-size: 14px;
+    color: #222;
+  }
+  #menu i,
+  #menu .bx {
+    text-align: end;
+    display: block;
+    font-size: 18px;
+    width: 30px;
+  }
+  #nav.active #menu {
+    width: 50%;
+    right: 0;
+  }
+  .main,
+  .footer {
+    transition: all 0.3s;
+    box-shadow: 2px -15px 10px rgba(0, 0, 0, 0.1);
+  }
+  .main.active,
+  .footer.active {
+    transform: translateX(-55%);
+  }
+  #btn-mobile {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: white;
+    margin: 0 0 0 auto;
+    gap: 0.5rem;
+  }
+  #hamburguer {
+    margin-top: -2px;
+    display: block;
+    width: 20px;
+    border-top: 1px solid;
+  }
+  #hamburguer::before,
+  #hamburguer::after {
+    content: "";
+    display: block;
+    width: 20px;
+    border-top: 1px solid;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+  #nav.active.active #hamburguer {
+    border-top-color: transparent;
+  }
+  #nav.active.active #hamburguer::before {
+    transform: rotate(135deg);
+  }
+  #nav.active.active #hamburguer::after {
+    transform: rotate(-135deg);
+    top: -6px;
   }
 }

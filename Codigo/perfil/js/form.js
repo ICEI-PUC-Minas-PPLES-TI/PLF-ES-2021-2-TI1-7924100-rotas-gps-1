@@ -1,5 +1,5 @@
-const LOGIN_URL = "https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/Login/login.html";
-localStorage.setItem('link', JSON.stringify("https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/perfil/perfilPrincipal.html"));
+const LOGIN_URL = "../Login/login.html";
+localStorage.setItem('link', JSON.stringify("../perfil/perfilPrincipal.html"));
 
 function validacaoForm() {
     var asterisco;
@@ -78,8 +78,8 @@ function generateUUID() { // Public Domain/MIT
     });
 }
 
-const usuario = JSON.parse(localStorage.getItem('usuarioCorrente'));
-const usuariosJSON = JSON.parse(localStorage.getItem('db_usuarios'));
+var usuario = JSON.parse(localStorage.getItem('usuarioCorrente'));
+var usuariosJSON = JSON.parse(localStorage.getItem('db_usuarios'));
 
 function salvaPerfil(event) {
     // Cancela a submissão do formulário para tratar sem fazer refresh da tela
@@ -119,13 +119,8 @@ function confirmarMudancaSenha(event) {
     // Cancela a submissão do formulário para tratar sem fazer refresh da tela
     event.preventDefault();
 
-    //Faz a verificação individual de cada campo do formulário
+    // Faz a verificação individual de cada campo do formulário
     validacaoForm();
-
-    // // Verfica se o formulário está preenchido corretamente
-    if (!$('#form-configPerfil')[0].checkValidity()) {
-        return;
-    }
 
     // Obtem os dados do formulário
     let nome = $("#txt_nome").val();
@@ -134,6 +129,17 @@ function confirmarMudancaSenha(event) {
     let email = $("#txt_email").val();
     let novaSenha = $('#txt_senha').val();
     let confirmarNovaSenha = $('#txt_confirmar-senha').val();
+
+    // Verfica se o formulário está preenchido corretamente
+    if (!$('#form-configPerfil')[0].checkValidity()) {
+        if (novaSenha.length <= 8 || novaSenha.length >= 15)
+            alert('Senha menor que 8 caracteres');
+        else
+            alert('Dados incorretos');
+        return;
+    }
+
+    // Criação de Array q armazena os dados obtidos
     let userInfos = {
         nome: nome,
         sobrenome: sobrenome,
@@ -174,6 +180,8 @@ function mudarSenha() {
         newInput.setAttribute('type', "password");
         newInput.setAttribute('placeholder', "Digite a senha novamente");
         newInput.setAttribute('required', 'required');
+        newInput.setAttribute('minlength', '8');
+        newInput.setAttribute('maxlength', '15');
         newInput.classList = 'form-control';
         newInput.id = 'txt_confirmar-senha';
 

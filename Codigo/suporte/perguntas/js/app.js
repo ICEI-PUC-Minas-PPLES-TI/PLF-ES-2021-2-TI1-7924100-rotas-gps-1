@@ -82,6 +82,10 @@ var db_perguntas = {
     ]
 }
 
+// Define a pontuação que o usuário irá ganhar ao adicionar uma pergunta ou resposta. Caso elas sejam apagadas, o usuário perderá esses pontos
+const PNTS_Pergunta = 25;
+const PNTS_Resposta = 15;
+
 // Caso os dados já estejam no Local Storage, caso contrário, carrega os dados iniciais
 var db = JSON.parse(localStorage.getItem('db_quests'));
 if (!db) {
@@ -89,7 +93,9 @@ if (!db) {
     localStorage.setItem('db_quests', JSON.stringify(db));
 }
 
+// Atribuir os dados do usuários à variáveis para manipulação
 var user = JSON.parse(localStorage.getItem('usuarioCorrente'));
+var usuariosJSON = JSON.parse(localStorage.getItem('db_usuarios'));
 
 function insertPergunta(userId, pergunta) {
     let novaPergunta = {
@@ -103,11 +109,21 @@ function insertPergunta(userId, pergunta) {
         "resp": []
     }
 
+
     // Insere o novo objeto no array
     db.data.push(novaPergunta);
 
+    // Identifica a posição do JSON do usuário logado
+    let index = usuariosJSON.user.map(obj => obj.id).indexOf(userId);
+
+    // Adiciona os pontos por fazer uma pergunta no JSON do usuário
+    usuariosJSON.user[index].pontos += PNTS_Pergunta;
+    user.pontos += PNTS_Pergunta;
+
     // Atualiza os dados no Local Storage
     localStorage.setItem('db_quests', JSON.stringify(db));
+    localStorage.setItem('db_usuarios', JSON.stringify(usuariosJSON));
+    localStorage.setItem('usuarioCorrente', JSON.stringify(user));
 
     // Limpa o formulario
     $("#form-perguntas")[0].reset();
@@ -128,8 +144,17 @@ function insertResp(classNome, resposta, userId, newDate) {
     // Insere o novo objeto no array
     db.data[id].resp.push(novaResp);
 
+    // Identifica a posição do JSON do usuário logado
+    let index = usuariosJSON.user.map(obj => obj.id).indexOf(userId);
+
+    // Adiciona os pontos por responder uma pergunta no JSON do usuário
+    usuariosJSON.user[index].pontos += PNTS_Resposta;
+    user.pontos += PNTS_Resposta;
+
     // Atualiza os dados no Local Storage
     localStorage.setItem('db_quests', JSON.stringify(db));
+    localStorage.setItem('db_usuarios', JSON.stringify(usuariosJSON));
+    localStorage.setItem('usuarioCorrente', JSON.stringify(user));
 
     // Limpa o formulario
     $("#form-addresposta-modal")[0].reset();
@@ -170,6 +195,19 @@ function deletePergunta(classNome) {
 
     // Atualiza os dados no Local Storage
     localStorage.setItem('db_quests', JSON.stringify(db));
+
+    // Identifica a posição do JSON do usuário logado
+    let index = usuariosJSON.user.map(obj => obj.id).indexOf(user.id);
+
+    // Subtrai os pontos por apagar uma pergunta no JSON do usuário
+    if (user.pontos > 0) {
+        usuariosJSON.user[index].pontos -= PNTS_Pergunta;
+        user.pontos -= PNTS_Pergunta;
+
+        // Atualiza os pontos no Local Storage
+        localStorage.setItem('db_usuarios', JSON.stringify(usuariosJSON));
+        localStorage.setItem('usuarioCorrente', JSON.stringify(user));
+    }
 }
 
 function deleteResp(classNome, respId) {
@@ -181,4 +219,17 @@ function deleteResp(classNome, respId) {
 
     // Atualiza os dados no Local Storage
     localStorage.setItem('db_quests', JSON.stringify(db));
+
+    // Identifica a posição do JSON do usuário logado
+    let index = usuariosJSON.user.map(obj => obj.id).indexOf(user.id);
+
+    // Subtrai os pontos por apagar uma resposta no JSON do usuário
+    if (user.pontos > 0) {
+        usuariosJSON.user[index].pontos -= PNTS_Resposta;
+        user.pontos -= PNTS_Resposta;
+
+        // Atualiza os pontos no Local Storage
+        localStorage.setItem('db_usuarios', JSON.stringify(usuariosJSON));
+        localStorage.setItem('usuarioCorrente', JSON.stringify(user));
+    }
 }

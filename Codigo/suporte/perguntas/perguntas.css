@@ -808,6 +808,10 @@ div.logo-redes {
     display: none;
 }
 
+#lineTrocaPontos.hidden {
+    display: none;
+}
+
 
 /* Fim Rodapé */
 

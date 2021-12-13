@@ -1,3 +1,4 @@
+var db = JSON.parse(localStorage.getItem('db_quests'));
 var init = true;
 
 function mostraPergunta(id, classNome) {

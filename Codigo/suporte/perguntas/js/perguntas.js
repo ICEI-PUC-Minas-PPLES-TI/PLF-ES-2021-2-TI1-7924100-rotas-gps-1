@@ -1,5 +1,5 @@
-const LOGIN_URL = "https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/Login/login.html";
-const PERFIL_URL = "https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/perfil/perfilPrincipal.html";
+const LOGIN_URL = "../../Login/login.html";
+const PERFIL_URL = "../../perfil/perfilPrincipal.html";
 var userLogin = JSON.parse(localStorage.getItem('usuarioCorrente'));
 
 function validacaoForm() {
@@ -95,7 +95,7 @@ function addPergunta() {
         insertPergunta(userLogin.id, pergunta);
 
         //Recarregar a página
-        location.reload();
+        deleteParamsUrl();
     }
 }
 
@@ -133,6 +133,8 @@ const addResposta = (substring) => {
 
         loadAnswers(substring);
     }
+
+    console.log(user.pontos)
 }
 
 function editarResp(classNome, respId) {
@@ -197,7 +199,7 @@ function alterarPergunta(classNome) {
     updatePergunta(id, pergunta);
 
     // Recarregar a página
-    location.reload();
+    deleteParamsUrl();
 }
 
 function apagarPergunta() {
@@ -209,7 +211,7 @@ function apagarPergunta() {
     }
 
     // Recarregar a página
-    location.reload();
+    deleteParamsUrl();
 }
 
 function apagarResp(classNome, respId) {
@@ -232,6 +234,8 @@ function apagarResp(classNome, respId) {
             lineAnswer[i].className = `resposta-${i}`;
         }
     }
+
+    console.log(user.pontos)
 }
 
 function editarModal() {
@@ -341,12 +345,13 @@ $(document).ready(function() {
     // Função que captura o parâmetro 'search' da url para ser utilizada na filtragem das perguntas
     const urlParams = new URLSearchParams(window.location.search);
     const searchParam = urlParams.get('search');
-    filtroPerguntas(searchParam);
+    if (searchParam)
+        filtroPerguntas(searchParam.toLocaleLowerCase());
 
     localStorage.setItem('link', JSON.stringify(""));
 
     const login = document.querySelector('#loginProfile');
-    const trocaPonto = document.querySelector('#loginTrocaPonto');
+    const trocaPonto = document.querySelector('#lineTrocaPontos');
 
     // Se o usuário não estiver logado, no menu aparecerá a palavra "Entrar"
     if (userLogin != undefined) {
@@ -360,11 +365,19 @@ $(document).ready(function() {
     }
 
     login.addEventListener('click', function() {
-        localStorage.setItem('link', JSON.stringify("https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/suporte/perguntas/perguntas.html"));
+        localStorage.setItem('link', JSON.stringify("../../suporte/perguntas/perguntas.html"));
     })
 
     const btnAddQuestion = document.querySelector('#adicionar_mais');
     btnAddQuestion.addEventListener('click', function() {
         $("#inputNome").val(userLogin.nome);
     })
+
+    console.log(user.pontos)
 })
+
+function deleteParamsUrl() {
+    var url = window.location.href;
+    url = url.split(/[?#]/)[0];
+    window.location.replace(url);
+}
