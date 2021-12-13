@@ -1,0 +1,822 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/*Configurações gerais*/
+
+
+/*Tela*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #404040;
+    font: 400 14px/22px 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+}
+
+
+/*Fim Tela*/
+
+
+/*Modais*/
+
+div.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 21px;
+    border: none;
+    height: 60px;
+}
+
+div.inputNome {
+    width: 87%;
+    margin: 0 auto;
+}
+
+div.nameCategory {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.telFunc {
+    width: 87%;
+    margin: 15px auto 0;
+}
+
+#inputName,
+#inputNameEdit,
+#inputCategory,
+#inputCategoryEdit,
+#inputAddress,
+#inputAddressEdit,
+#inputPhone,
+#inputPhoneEdit,
+#inputOpen,
+#inputOpenEdit,
+#inputClose,
+#inputCloseEdit,
+#inputSite,
+#inputSiteEdit,
+#inputDescription,
+#inputDescriptionEdit {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    border: #F4F2F2;
+    background-color: #F4F2F2;
+    padding: 7px 15px;
+    border-radius: 10px 10px;
+    margin: 0 auto;
+    width: 87%;
+}
+
+div.col-5,
+div.col-6,
+div.col-7 {
+    padding: 0;
+}
+
+div.col-7 {
+    padding-left: 20px;
+}
+
+.funcionamento {
+    display: flex;
+    justify-content: space-between;
+}
+
+#inputName,
+#inputNameEdit {
+    width: 225px;
+}
+
+#inputCategory,
+#inputCategoryEdit {
+    width: 175px;
+}
+
+#inputName,
+#inputNameEdit,
+#inputCategory,
+#inputCategoryEdit,
+#inputOpen,
+#inputOpenEdit,
+#inputClose,
+#inputCloseEdit,
+#inputPhone,
+#inputPhoneEdit {
+    margin: 0;
+}
+
+div.modal-body {
+    width: 100%;
+}
+
+form .form-control:focus,
+#addEndereco:focus,
+button.btn-close:focus {
+    box-shadow: none;
+}
+
+div.btnAdd {
+    border: none;
+    padding-bottom: 20px;
+    padding-right: 50px;
+}
+
+div.hudRodape {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0 20px;
+    border: none;
+}
+
+#botao-editar,
+#apagar-endereco,
+#addEndereco,
+#confirmar-alteracao {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #FFF;
+    border: none;
+    background-color: #1461ff;
+    border-radius: 20px;
+    padding: 0px 15px !important;
+    height: 30px;
+    float: right;
+}
+
+#addEndereco:hover,
+#botao-editar:hover,
+#apagar-endereco:hover,
+#confirmar-alteracao:hover {
+    background-color: #1b718b;
+}
+
+#addEndereco:focus,
+#botao-editar:focus,
+#apagar-endereco:focus,
+#confirmar-alteracao:focus {
+    box-shadow: none;
+}
+
+#addEndereco:focus #botao-editar:focus #apagar-endereco:focus #confirmar-alteracao:focus {
+    box-shadow: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+
+/*Fim Modais*/
+
+
+/*Input*/
+
+input[type="tel"] {
+    width: 140px !important;
+}
+
+input[type="time"] {
+    width: 100px !important;
+}
+
+input+span.validacao {
+    padding-right: 30px;
+}
+
+input:invalid+span.validacao:after {
+    content: '✖';
+    color: red;
+    padding: 0;
+}
+
+input:valid+span.validacao:after {
+    content: '✓';
+    color: rgb(0, 172, 0);
+    padding: 0;
+}
+
+
+/* Fim Input */
+
+
+/* Inicio Menu */
+
+.header {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+#nav {
+    margin: 0 0 0 auto;
+}
+
+header a,
+#nome-perfil {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav a:hover,
+#nome-perfil:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+#logo img {
+    width: 30px;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+#logo:hover {
+    color: #FFF;
+}
+
+#nomelogo {
+    margin: 3px 5px 0 10px;
+    font-family: 'Intro';
+    color: white;
+}
+
+#menu {
+    margin: 0 0 3px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+#menu a {
+    color: #f0f0f0;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #1461ff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    transition: all .2s;
+}
+
+#menu a:hover {
+    background-color: #fafafa;
+    color: #1461ff;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
+}
+
+#menu li i {
+    display: none;
+}
+
+
+/* Fim Menu */
+
+
+/* Página lateral que ocupa 30% da tela no desktop */
+
+#lateralMenu.block {
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    max-width: 30%;
+}
+
+#lateralMenu.hidden {
+    display: none;
+}
+
+#minimizer {
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    height: 50px;
+    width: auto;
+}
+
+#minimizer:hover {
+    cursor: pointer;
+}
+
+#closeMobile {
+    display: none;
+}
+
+#lineTrocaPontos.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#minimizer.block #btnLateral {
+    transform: rotate(180deg);
+}
+
+.listings {
+    height: 100vh;
+    overflow: auto;
+    padding-bottom: 60px;
+}
+
+.sidebar {
+    height: 100vh;
+    overflow: hidden;
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.sidebar.hidden {
+    display: none;
+}
+
+#titulo {
+    margin: 20px;
+}
+
+#titulo h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 5px;
+}
+
+#description {
+    padding: 0 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.disable {
+    display: none;
+}
+
+p.descricao {
+    margin: 15px 0;
+    width: 90%;
+}
+
+div.infos {
+    margin-top: 20px;
+}
+
+.dados {
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+    height: 32px;
+}
+
+p.text {
+    margin: 0;
+    width: 80%;
+}
+
+div.listings:nth-child(4) {
+    border-bottom: 1px solid #cecece;
+}
+
+.dados:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+a {
+    color: #404040;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #404040;
+}
+
+.sidebar .fas,
+.sidebar .far {
+    width: 65px;
+    padding: 0 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#changeInfos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px auto 0;
+    padding: 7px 15px;
+    border: 1px solid #404040;
+    border-radius: 30px;
+    background: none;
+    cursor: pointer;
+}
+
+#changeInfos:hover {
+    background: #a5a5a5;
+    color: #FFF;
+    border-color: #FFF;
+}
+
+.bx {
+    font-size: 17px;
+}
+
+#btn-editar {
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+
+/*Scroll bar*/
+
+ ::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-left: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+ ::-webkit-scrollbar-track {
+    background: none;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #1461ff;
+    border-radius: 0;
+}
+
+
+/* Fim Scroll bar */
+
+
+/* Btn Adicionar Enderço */
+
+#addAddress {
+    position: absolute;
+    z-index: 1000;
+    right: 50px;
+    bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1461ff;
+    margin: 0;
+    padding: 7px 15px;
+    border: none;
+    font-size: 13px;
+    color: white;
+    font-size: 15px;
+    border-radius: 50px;
+    transition: all .3s;
+}
+
+#mais {
+    margin-left: 5px;
+    font-size: 13px;
+    transition: all .4s;
+}
+
+#addAddress:hover {
+    background-color: #fafafa;
+    color: #1461ff;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
+}
+
+#addAddress:hover #mais {
+    transform: rotateZ(-180deg);
+}
+
+
+/*Fim Btn Adicionar Endereço*/
+
+
+/*Tablet*/
+
+@media (min-width: 601px) and (max-width: 1399px) {
+    #lateralMenu.block {
+        max-width: 50%;
+    }
+    #mais {
+        display: none;
+    }
+}
+
+
+/*Fim Tablet*/
+
+
+/*Mobile*/
+
+@media (max-width: 600px) {
+    /* Menu */
+    .header {
+        padding: 0 !important;
+        margin: 0;
+        position: fixed;
+        z-index: 100;
+    }
+    #nav {
+        margin: 0 0 0 auto;
+    }
+    #menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        padding: 0;
+        z-index: 100;
+        height: 100vh;
+        right: -200px;
+        top: 0;
+        list-style: none;
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+        transition: all .4s;
+    }
+    #menu li {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 1rem 0;
+        margin: 0 1rem;
+    }
+    #menu li a {
+        background: none;
+        padding: 0;
+        text-align: end;
+        font-size: 14px;
+        color: #222;
+    }
+    #menu i,
+    #menu .bx {
+        text-align: end;
+        display: block;
+        font-size: 18px;
+        width: 30px;
+    }
+    #nav.active #menu {
+        background-color: #fafafa;
+        width: 60%;
+        right: 0;
+    }
+    #btn-mobile {
+        display: flex;
+        align-items: center;
+        padding: .5rem 0;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: white;
+        margin: 0 0 0 auto;
+        gap: .5rem
+    }
+    #hamburguer {
+        margin-top: -2px;
+        display: block;
+        width: 20px;
+        border-top: 1px solid #222;
+        color: #222;
+        position: absolute;
+        z-index: 200;
+        right: 20px;
+        top: 20px;
+    }
+    #hamburguer::before,
+    #hamburguer::after {
+        content: '';
+        display: block;
+        width: 20px;
+        border-top: 1px solid;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #hamburguer {
+        z-index: 500;
+        border-top: none;
+    }
+    #nav.active #hamburguer::before {
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after {
+        transform: rotate(-135deg);
+        top: -6px;
+    }
+    #menu li i {
+        display: block;
+    }
+    /* Inputs */
+    div.inputNome {
+        width: 95%;
+        margin: 0 auto;
+    }
+    div.nameCategory {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .telFunc {
+        width: 95%;
+        margin: 15px auto 0;
+    }
+    #inputName,
+    #inputNameEdit,
+    #inputCategory,
+    #inputCategoryEdit,
+    #inputAddress,
+    #inputAddressEdit,
+    #inputPhone,
+    #inputPhoneEdit,
+    #inputOpen,
+    #inputOpenEdit,
+    #inputClose,
+    #inputCloseEdit,
+    #inputSite,
+    #inputSiteEdit,
+    #inputDescription,
+    #inputDescriptionEdit {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        border: #F4F2F2;
+        background-color: #F4F2F2;
+        padding: 7px 15px;
+        border-radius: 10px 10px;
+        margin: 0 auto;
+        width: 95%;
+    }
+    #inputName,
+    #inputNameEdit,
+    #inputCategory,
+    #inputCategoryEdit,
+    #inputOpen,
+    #inputOpenEdit,
+    #inputClose,
+    #inputCloseEdit,
+    #inputPhone,
+    #inputPhoneEdit {
+        margin: 0;
+    }
+    #inputName,
+    #inputNameEdit {
+        width: 160px;
+    }
+    #inputCategory,
+    #inputCategoryEdit {
+        width: 140px;
+    }
+    div.col-7 {
+        padding-left: 5px;
+    }
+    input[type="tel"] {
+        width: 120px !important;
+    }
+    input[type="time"] {
+        width: 85px !important;
+    }
+    #lateralMenu.block {
+        max-width: 100%;
+    }
+    #minimizer {
+        display: none;
+    }
+    #closeMobile {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 10001;
+        height: 30px;
+        width: 30px;
+        border: none;
+        border-radius: 50px;
+        background: #1461ff;
+        color: #FFF;
+        font-size: 16px;
+    }
+    #closeMobile.hidden {
+        display: none;
+    }
+    #addAddress.hidden {
+        display: none;
+    }
+    #addAddress {
+        right: 0;
+        left: 0;
+        bottom: 40px;
+        margin: 0 auto;
+        width: 177.8px;
+    }
+    #mais {
+        display: none;
+    }
+}
+
+
+/*Fim Mobile*/
+
+
+/* Marcadores e popUp */
+
+.mapboxgl-popup {
+    margin-top: -35px;
+}
+
+.mapboxgl-popup-close-button {
+    display: none;
+}
+
+.mapboxgl-popup-content {
+    padding: 0;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.mapboxgl-popup-content p {
+    color: #1461ff;
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 13px;
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+    width: 100px;
+}
+
+.mapboxgl-popup-content p.active {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: #F00;
+    margin-top: -5px;
+    margin-left: 15px;
+    position: absolute;
+    z-index: 15;
+    width: 120px;
+}
+
+.mapboxgl-popup-tip {
+    display: none;
+}
+
+.marker {
+    cursor: pointer;
+    font-size: 25px;
+    color: #1461ff;
+    transition: font .2s;
+}
+
+.marker.active {
+    cursor: pointer;
+    font-size: 32px;
+    color: #F00;
+    position: absolute;
+    z-index: 10;
+}

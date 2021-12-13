@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site Pessoal">
+    <link rel="icon" href="./svg/icon.svg">
+    <title id="tiuloAba"></title>
+
+    <!-- Aquivo CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/c89ded80b6.js" crossorigin="anonymous"></script>
+
+    <!-- Boxicons -->
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="header">
+            <a id="logo" href="#">
+                <img src="./svg/Logo-Klug-2-branco.svg" id="logo-menu" alt="Logo">
+                <span id="nomelogo">KLUG </span>
+                <span id="localpagina">| Perfil</span>
+            </a>
+            <nav id="nav">
+                <button onclick="toggleMenu()" id="btn-mobile" aria-controls="menu" aria-haspopup="true" aria-label="Abrir Menu"><span id="hamburguer"></span></button>
+                <ul id="menu" role="menu">
+                    <li><a href="../rotas/rotas.html">Home</a>
+                        <i class="bx bxs-home"></i>
+                    </li>
+                    <li><a href="../add-endereco/index.html">Adicionar Endereço</a> <i class="fas fa-map-marker-alt"></i></li>
+                    <li><a id="loginTrocaPonto" href="../troca-pontos/troca-pontos.html">Trocar Pontos</a> <i class="fas fa-ticket-alt"></i></li>
+                    <li><a href="../suporte/pagina-inicial/pagina-inicial.html">Suporte</a> <i class="fas fa-wrench"></i></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="user">
+            <!-- Perfil -->
+            <div class="profile">
+                <div class="perfil" id="perfil"></div>
+
+                <!-- Btn editar perfil -->
+                <div class="btn-config">
+                    <button type="button" id="btnLogout" onclick="logoutUser()">Logout</button>
+                </div>
+            </div>
+
+            <!-- Editar configs -->
+            <div class="editPerfil">
+                <form id="form-configPerfil">
+                    <span class="label"></span>
+                    <input type="text" class="form-control" placeholder="Primeiro nome" id="txt_nome" required>
+
+                    <span class="label"></span>
+                    <input type="text" class="form-control" placeholder="Segundo nome" id="txt_sobrenome">
+
+                    <span class="label"></span>
+                    <input type="text" class="form-control" placeholder="Endereço" id="txt_address">
+
+                    <span class="label"></span>
+                    <input type="email" class="form-control" placeholder="Adicionar email" id="txt_email" required>
+
+                    <span class="label"></span>
+                    <input type="password" class="form-control" placeholder="Digite a senha" id="txt_senha" minlength="8" maxlength="15" required>
+                </form>
+                <div class="hudBtns">
+                    <button class="btn-saveChanges" id="profile-button" type="button">Salvar alterações</button>
+                    <button class="btn-password" id="change-password" type="button">Mudar senha</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Minhas Perguntas e Respostas -->
+        <div class="minhasPergResps">
+            <div class="perg">
+                <h2>Minhas Perguntas (<span class="quantQuestions"></span>)</h2>
+                <ul class="questContent"></ul>
+            </div>
+            <div class="resps">
+                <h2>Minhas Respostas (<span class="quantAnswers"></span>)</h2>
+                <ul class="respContent"></ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="principais-topicos">
+            <h4 class="titulo-rodape">Principais tópicos de ajuda</h4>
+
+            <div class="editar-rotas">
+                <button id="botao-principais-topicos" class="btn btn-default" data-bs-toggle="collapse" data-bs-target="#edicao-rotas" aria-expanded="false" aria-controls="edicao-rotas">
+                    Edição de rotas 
+                    <span id="icone-dropdonw">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </button>
+
+                <div class="collapse" id="edicao-rotas">
+                    <div id="texto-expansivo" class="card card-body">
+                        O menu de edição de rotas possibilita ao usuário escolher por onde ele deseja passar ou evitar, atualizar o mapa com novas informações; tudo isso em uma interface limpa, intuitiva e fácil de mexer. Para acessá-la basta clicar no ícone de "lápis" no menu
+                        inferior
+                    </div>
+                </div>
+            </div>
+
+            <div class="personalizar-rotas">
+                <button id="botao-principais-topicos" class="btn btn-default" data-bs-toggle="collapse" data-bs-target="#personalizacao-rotas" aria-expanded="false" aria-controls="personalizacao-rotas">
+                    Personalizacao de rotas 
+                    <span id="icone-dropdonw">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </button>
+
+                <div class="collapse" id="personalizacao-rotas">
+                    <div id="texto-expansivo" class="card card-body">
+                        No perfil, o usuário pode escolher qual o tipo de rota desejável para aquele momento, como uma rota mais rápida, segura, que evite as principais avenidas, etc; além de montar um perfil personalizado de preferência de rotas na hora de montar uma. Para
+                        criar uma personalização, acesse o perfil e clique em "Criar personalização"
+                    </div>
+                </div>
+            </div>
+
+            <div class="explorar-o-mapa">
+                <button id="botao-principais-topicos" class="btn btn-default" data-bs-toggle="collapse" data-bs-target="#explorar-mapa" aria-expanded="false" aria-controls="explorar-mapa">
+                    Explorar o mapa 
+                    <span id="icone-dropdonw">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </button>
+
+                <div class="collapse" id="explorar-mapa">
+                    <div id="texto-expansivo" class="card card-body">
+                        Na tela de configurações do mapa, o usuário pode escolher qual tipo de informação aparecerá no mapa como avisos de acidentes, radares, áreas indesejadas ou perigosas, etc...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-footer">
+            <div class="logo-redes">
+                <div class="logo-footer">
+                    <a href="#">
+                        <img src="./svg/Logo-Klug-1-branco.svg" id="logo-rodape" alt="Logo">
+                        <i class="fas fa-chevron-right"></i>
+                        <span id="indicador-pagina-rodape">Suporte</span>
+                    </a>
+                </div>
+                <div class="redes-footer">
+                    <span id="siga-nos">Siga-nos</span>
+                    <a class="facebook" href="https://web.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                    <a class="twitter" href="https://twitter.com/home" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a class="instagram" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div class="copyright-texto">
+                    <p><b>Copyright&copy <span id="ano"></span> Klug </b>| Todos os direitos reservados</p>
+                </div>
+                <div class="pais">
+                    <p>Brasil</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Arquivos JS -->
+    <script src="./js/perfil.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/userInfos.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+
+</html>

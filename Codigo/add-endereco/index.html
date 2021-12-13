@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Rotas do Klug">
+    <link rel="icon" href="./svg/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar marcador de endereço</title>
+
+    <!-- Mapbox API -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/c89ded80b6.js" crossorigin="anonymous"></script>
+
+    <!-- Boxicons -->
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Aquivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Modal Adicionar Endereço-->
+    <div class="modal fade" id="adicionarEndereco" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Adicionar Endereco</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-enderecos">
+                        <div class="row inputNome">
+                            <label for="inputName"></label>
+                            <label for="inputCategory"></label>
+                            <div class="nameCategory">
+                                <input type="text" class="form-control" id="inputName" placeholder="Adicionar nome" title="Nome do local" required>
+                                <input type="text" class="form-control" id="inputCategory" placeholder="Adicionar categoria" title="Categoria">
+                            </div>
+                        </div>
+
+                        <div class="row inputEndereco">
+                            <div class="col-12">
+                                <label for="inputAddress"></label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="Adicionar endereço" autocomplete="off" list="listAddress" title="Endereço do local" required>
+                                <datalist id="listAddress"></datalist>
+                            </div>
+                        </div>
+
+                        <div class="row telFunc">
+                            <div class="col-5">
+                                <label id="labelPhone" for="inputPhone">Telefone</label>
+                                <input type="tel" pattern="\([0-9]{2}\)[\s][0-9]{4,5}-[0-9]{4}" class="form-control" id="inputPhone" placeholder="(xx) xxxxx-xxxx" autocomplete="off" title="Número de telefone" required>
+                            </div>
+                            <div class="col-7">
+                                <label id="labelFunc">Funcionamento</label>
+                                <div class="funcionamento">
+                                    <input type="time" class="form-control" id="inputOpen" autocomplete="off" min="00:00" max="23:59" title="Horário de abertura do local">
+                                    <input type="time" class="form-control" id="inputClose" autocomplete="off" min="00:00" max="23:59" title="Horário de fechamento do local">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="inputSite"></label>
+                                <input type="text" class="form-control" id="inputSite" placeholder="https://www.exemplo.com" autocomplete="off" title="URL do site">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="inputDescription"></label>
+                                <textarea class="form-control" id="inputDescription" placeholder="Adicionar Descrição" rows="5" autocomplete="off" title="Decrição"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer btnAdd">
+                    <button type="submit" id="addEndereco" class="btn btn-default" onclick="adicionarEndereco()">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Editar Endereço-->
+    <div class="modal fade" id="editarEndereco" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel2">Editar Endereco</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-editarEnderecos">
+                        <div class="row inputNome">
+                            <label for="inputNameEdit"></label>
+                            <label for="inputCategoryEdit"></label>
+                            <div class="nameCategory">
+                                <input type="text" class="form-control" id="inputNameEdit" placeholder="Adicionar nome" title="Nome do local" required>
+                                <input type="text" class="form-control" id="inputCategoryEdit" placeholder="Adicionar categoria" title="Categoria">
+                            </div>
+                        </div>
+
+                        <div class="row inputEndereco">
+                            <div class="col-12">
+                                <label for="inputAddressEdit"></label>
+                                <input type="text" class="form-control" id="inputAddressEdit" placeholder="Adicionar endereço" autocomplete="off" list="listAddressEdit" title="Endereço do local" required>
+                                <datalist id="listAddressEdit"></datalist>
+                            </div>
+                        </div>
+
+                        <div class="row telFunc">
+                            <div class="col-5">
+                                <label for="inputPhoneEdit">Telefone</label>
+                                <input type="tel" pattern="\([0-9]{2}\)[\s][0-9]{4,5}-[0-9]{4}" class="form-control" id="inputPhoneEdit" placeholder="(xx) xxxxx-xxxx" autocomplete="off" title="Número de telefone" required>
+                            </div>
+                            <div class="col-7">
+                                <label>Funcionamento</label>
+                                <div class="funcionamento">
+                                    <input type="time" class="form-control" id="inputOpenEdit" autocomplete="off" min="00:00" max="23:59" title="Horário de abertura do local">
+                                    <input type="time" class="form-control" id="inputCloseEdit" autocomplete="off" min="00:00" max="23:59" title="Horário de fechamento do local">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="inputSiteEdit"></label>
+                                <input type="text" class="form-control" id="inputSiteEdit" placeholder="https://www.exemplo.com" autocomplete="off" title="URL do site">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="inputDescriptionEdit"></label>
+                                <textarea class="form-control" id="inputDescriptionEdit" placeholder="Adicionar Descrição" rows="5" autocomplete="off" title="Decrição"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer hudRodape">
+                    <button type="submit" id="apagar-endereco" class="btn btn-default" onclick="apagarEndereco()">Apagar</button>
+                    <button type="submit" id="confirmar-alteracao" class="btn btn-default" onclick="alterarEndereco()">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu de navegação -->
+    <div class="header">
+        <nav id="nav">
+            <button onclick="toggleMenu()" id="btn-mobile" aria-controls="menu" aria-haspopup="true" aria-label="Abrir Menu"><span id="hamburguer"></span></button>
+            <ul id="menu" role="menu">
+                <li><a href="../rotas/rotas.html">Home</a>
+                    <i class="bx bxs-home"></i>
+                </li>
+                <li><a href="../suporte/pagina-inicial/pagina-inicial.html">Suporte</a> <i class="fas fa-wrench"></i></li>
+                <li id="lineTrocaPontos"><a id="loginTrocaPonto" href="../troca-pontos/troca-pontos.html">Trocar Pontos</a> <i class="fas fa-ticket-alt"></i></li>
+                <li>
+                    <a id="loginProfile" href=""> </a><i class="fas fa-user"></i>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Btn close para mobile -->
+    <button id="closeMobile" class="hidden"><i class="fas fa-times"></i></button>
+
+    <!-- Sidebar -->
+    <div class="menuLateral" id="lateralMenu"></div>
+
+    <!-- Btn para adicionar endereços -->
+    <button id="addAddress" class="block" data-bs-toggle="modal" data-bs-target="#adicionarEndereco">Adicionar Endereço<i id="mais" class="fas fa-plus"></i></button>
+
+    <!-- Mapa -->
+    <div id="map" class="map"></div>
+
+    <!-- Arquivos JS -->
+    <script src="./js/mapa.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/formulario.js"></script>
+    <script src="./js/script.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,644 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* Global ====================================================================*/
+
+:root {
+    --bg: #3d3d3d;
+    --bg-panel: #dfdfdf;
+    --color-text: #fff5f5;
+    --color-text-secondary: #333333;
+    transition: all 0.3s linear;
+}
+
+
+/* retira todos os espaçamentos e tamanhos do documento */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Corpo da página ===========================================================*/
+
+html {
+    height: 100%;
+}
+
+body {
+    color: #404040;
+    font: 400 14px/22px 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    /* tamanho da fonte, para questões de responsividade */
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    height: 100%;
+}
+
+.map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+}
+
+
+/* Estilo padrão principais botões da página =================================*/
+
+body .botao {
+    background-color: var(--bg);
+    height: 4.5rem;
+    width: 4.5rem;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+body button:hover {
+    opacity: 0.9;
+    transition: all 0.3s linear;
+}
+
+body .botao img {
+    height: 50%;
+}
+
+
+/* Header  ===================================================================*/
+
+.header {
+    width: 100%;
+    padding: 15px 50px;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+#nav {
+    margin: 0 0 0 auto;
+}
+
+header a,
+#nome-perfil {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav a:hover,
+#nome-perfil:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+#logo img {
+    width: 30px;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+#logo:hover {
+    color: #FFF;
+}
+
+#nomelogo {
+    margin: 3px 5px 0 10px;
+    font-family: 'Intro';
+    color: white;
+}
+
+#menu {
+    margin: 0 0 3px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+#menu a {
+    color: #f0f0f0;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #1461ff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    transition: all .2s;
+}
+
+#menu a:hover {
+    background-color: #fafafa;
+    color: #1461ff;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
+}
+
+#menu li i {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#lineTrocaPontos.hidden {
+    display: none;
+}
+
+
+/* Fim Menu */
+
+
+/* Página lateral que ocupa 30% da tela no desktop */
+
+#lateralMenu.block {
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    max-width: 30%;
+}
+
+#lateralMenu.hidden {
+    display: none;
+}
+
+#minimizer {
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    height: 50px;
+    width: auto;
+}
+
+#minimizer:hover {
+    cursor: pointer;
+}
+
+#closeMobile {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#minimizer.block #btnLateral {
+    transform: rotate(180deg);
+}
+
+.listings {
+    height: 100vh;
+    overflow: auto;
+    padding-bottom: 60px;
+}
+
+.sidebar {
+    height: 100vh;
+    overflow: hidden;
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.sidebar.hidden {
+    display: none;
+}
+
+#titulo {
+    padding: 20px 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+#titulo h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 5px;
+}
+
+#description {
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.disable {
+    display: none;
+}
+
+p.descricao {
+    margin: 15px 0;
+    width: 90%;
+}
+
+div.infos {
+    margin-top: 30px;
+}
+
+.dados {
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+    height: 32px;
+}
+
+p.text {
+    margin: 0;
+    width: 80%;
+}
+
+div.listings:nth-child(4) {
+    border-bottom: 1px solid #cecece;
+}
+
+.dados:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+a {
+    color: #404040;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #404040;
+}
+
+.sidebar .fas,
+.sidebar .far {
+    width: 65px;
+    padding: 0 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.bx {
+    font-size: 17px;
+}
+
+#btn-editar {
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+
+/* Rodapé - Barra de Pesquisa ================================================*/
+
+body footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: absolute;
+    gap: 4rem;
+    bottom: 1rem;
+    width: 100vw;
+}
+
+header #barra-pesquisa {
+    width: 30rem;
+    display: flex;
+}
+
+header input {
+    border: 1px solid var(--bg);
+    border-radius: 50px 0 0 50px;
+    color: var(--color-text);
+    background: var(--bg);
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.125rem;
+    text-overflow: ellipsis;
+}
+
+header input::placeholder {
+    color: var(--color-text);
+    opacity: 0.7;
+}
+
+header #criar-rota {
+    border: 1px solid #000;
+    border-radius: 0 50px 50px 0;
+    color: var(--color-text);
+    background: #000;
+    padding: 1rem;
+    width: 20%;
+    font-size: 1.125rem;
+    cursor: pointer;
+}
+
+header #criar-rota:hover {
+    opacity: 1;
+    border: #3731af;
+    background: #3731af;
+}
+
+
+/* Rodapé - Hud de avisos ====================================================*/
+
+#hud-avisos {
+    margin-bottom: 50px;
+    display: flex;
+    gap: 2rem;
+}
+
+#hud-avisos button {
+    height: 4rem;
+    width: 4rem;
+}
+
+#instructions {
+    position: absolute;
+    margin: 20px;
+    width: 25%;
+    top: 6rem;
+    bottom: 20%;
+    padding: 0 2rem;
+    background-color: #fff;
+    overflow-y: scroll;
+    z-index: 2;
+    display: none;
+}
+
+
+/* .mapboxgl-ctrl-geocoder,
+.mapboxgl-ctrl-geocoder > div,
+.geocoder-dropdown-item,
+.geocoder-dropdown-icon,
+.geocoder-dropdown-text {
+  border: 1px solid var(--bg) !important;
+  border-radius: 50px 0 0 50px !important;
+  color: var(--color-text) !important;
+
+  background: var(--bg) !important;
+  padding: 1rem !important;
+  width: 100% !important;
+
+  font-size: 1.125rem !important;
+
+  text-overflow: ellipsis !important;
+} */
+
+
+/* Responsive =====================================*/
+
+@media (max-width: 600px) {
+    /* Menu */
+    .header {
+        padding: 0 !important;
+        margin: 0;
+        position: fixed;
+        z-index: 100;
+    }
+    #nav {
+        margin: 0 0 0 auto;
+    }
+    #menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        padding: 0;
+        z-index: 100;
+        height: 100vh;
+        right: -200px;
+        top: 0;
+        list-style: none;
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+        transition: all .4s;
+    }
+    #menu li {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 1rem 0;
+        margin: 0 1rem;
+    }
+    #menu li a {
+        background: none;
+        padding: 0;
+        text-align: end;
+        font-size: 14px;
+        color: #222;
+    }
+    #menu i,
+    #menu .bx {
+        text-align: end;
+        display: block;
+        font-size: 18px;
+        width: 30px;
+    }
+    #nav.active #menu {
+        background-color: #fafafa;
+        width: 60%;
+        right: 0;
+    }
+    #btn-mobile {
+        display: flex;
+        align-items: center;
+        padding: .5rem 0;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: white;
+        margin: 0 0 0 auto;
+        gap: .5rem;
+        position: absolute;
+        z-index: 500;
+        right: 15px;
+        top: 20px;
+    }
+    #hamburguer {
+        margin-top: -2px;
+        display: block;
+        width: 20px;
+        border-top: 1px solid #222;
+        color: #222;
+        transition: border-top .2s;
+    }
+    #hamburguer::before,
+    #hamburguer::after {
+        content: '';
+        display: block;
+        width: 20px;
+        border-top: 1px solid;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #hamburguer {
+        z-index: 500;
+        border-top: none;
+    }
+    #nav.active #hamburguer::before {
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after {
+        transform: rotate(-135deg);
+        top: -6px;
+    }
+    #menu li i {
+        display: block;
+    }
+    /* Sidebar */
+    #lateralMenu.block {
+        max-width: 100%;
+    }
+    #minimizer {
+        display: none;
+    }
+    #closeMobile {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 10001;
+        height: 30px;
+        width: 30px;
+        border: none;
+        border-radius: 50px;
+        background: #1461ff;
+        color: #FFF;
+        font-size: 16px;
+    }
+    #closeMobile.hidden {
+        display: none;
+    }
+    /* Footer */
+    #hud-avisos {
+        margin-bottom: 15px;
+    }
+    #hud-avisos button {
+        height: 40px !important;
+        width: 40px !important;
+    }
+}
+
+@media (max-width: 800px) {
+    html {
+        font-size: 87.5%;
+    }
+    body .botao {
+        height: 4rem;
+        width: 4rem;
+    }
+    header #barra-pesquisa {
+        width: calc(100vw - 14vw);
+    }
+    #hud-avisos {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #hud-avisos button {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+}
+
+
+/*Tablet*/
+
+@media (min-width: 601px) and (max-width: 1399px) {
+    #lateralMenu.block {
+        max-width: 50%;
+    }
+    #mais {
+        display: none;
+    }
+}
+
+
+/* Marcadores e popUp */
+
+.mapboxgl-popup {
+    margin-top: -35px;
+}
+
+.mapboxgl-popup-close-button {
+    display: none;
+}
+
+.mapboxgl-popup-content {
+    padding: 0;
+    width: auto;
+    background: none !important;
+    box-shadow: none !important;
+    user-select: none !important;
+    pointer-events: none !important;
+}
+
+.mapboxgl-popup-content p {
+    color: #1461ff;
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 13px;
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+    width: 100px;
+    transition: all .2s;
+}
+
+.mapboxgl-popup-content p.active {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: #F00;
+    margin-top: -5px;
+    margin-left: 15px;
+    position: absolute;
+    z-index: 15;
+    width: 120px;
+}
+
+.mapboxgl-popup-tip {
+    display: none;
+}
+
+.marker {
+    cursor: pointer;
+    font-size: 25px;
+    color: #1461ff;
+    transition: all .2s;
+}
+
+.marker.active {
+    cursor: pointer;
+    font-size: 32px;
+    color: #F00;
+    position: absolute;
+    z-index: 10;
+}

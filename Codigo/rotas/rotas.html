@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rotas do Klug">
+    <link rel="icon" href="./imgs/icon.svg">
+    <title id="tituloAba"></title>
+
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="./rotas.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+
+    <!-- Mapbox API -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css">
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/c89ded80b6.js" crossorigin="anonymous"></script>
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+</head>
+
+<body>
+    <!-- Menu de navegação -->
+    <header class="header">
+        <nav id="nav">
+            <button id="btn-mobile" aria-controls="menu" aria-haspopup="true" aria-label="Abrir Menu"><span id="hamburguer"></span></button>
+            <ul id="menu" role="menu">
+                <li><a href="../add-endereco/index.html">Adicionar Endereço</a>
+                    <i class="bx bxs-home"></i>
+                </li>
+                <li><a href="../suporte/pagina-inicial/pagina-inicial.html">Suporte</a> <i class="fas fa-wrench"></i></li>
+                <li id="lineTrocaPontos"><a id="loginTrocaPonto" href="../troca-pontos/troca-pontos.html">Trocar Pontos</a> <i class="fas fa-ticket-alt"></i></li>
+                <li>
+                    <a id="loginProfile" href=""> </a><i class="fas fa-user"></i>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Btn close para mobile -->
+    <button id="closeMobile" class="hidden"><i class="fas fa-times"></i></button>
+
+    <!-- Sidebar -->
+    <div class="menuLateral" id="lateralMenu"></div>
+
+    <footer>
+        <div id="hud-avisos">
+            <button class="botao" id="criarRota" title="Criar Rota">
+                    <img src="./imgs/cria-rota.svg" alt="Criar Rota">
+                </button>
+            <button class="botao" title="Alertas">
+                    <img src="./imgs/alert-triangle.svg" alt="Alerta">
+                </button>
+            <button class="botao" title="Ocorrências">
+                    <img src="./imgs/alert-octagon.svg" alt="Ocorrências">
+                </button>
+            <button class="botao" title="Tempestades">
+                    <img src="./imgs/cloud-lightning.svg" alt="Tempestades">
+                </button>
+            <button class="botao" title="Mais Opções">
+                    <img src="./imgs/more-horizontal.svg" alt="Mais Opções">
+                </button>
+        </div>
+    </footer>
+
+    <!-- Mapa -->
+    <div id="map" class="map"></div>
+
+    <!-- Arquivos JS -->
+    <script src="./js/scripts.js"></script>
+    <script src="./js/markers.js"></script>
+</body>
+
+</html>

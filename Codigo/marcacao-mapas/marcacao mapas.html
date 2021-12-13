@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Mapbox GL Draw Rectangle</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.js'></script>
+    <script src='mapbox-gl-draw-rectangle-mode.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.css' type='text/css' />
+    <div id='map'></div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoidGhlZGFuaWVsam9zdCIsImEiOiJja3Y4b2w0N3YydmcxMm5xMXRoNmx4cG91In0.5i0lbACuxUDFkr5-P11jYw';
+
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            center: [-91.874, 42.760],
+            zoom: 12
+        });
+
+
+        const modes = MapboxDraw.modes;
+        //const modes = marcacoes.geometry.coordinates;
+
+        modes.draw_rectangle = DrawRectangle.default;
+
+        const draw = new MapboxDraw({
+            modes: modes
+        });
+
+        map.addControl(draw);
+
+        draw.changeMode('draw_rectangle');
+
+
+        map.on('draw.create', function(feature) {
+            // Salva o novo banco de dados com o novo usuário no localStorage
+            localStorage.setItem('db_marcacoes', JSON.stringify(feature.features));
+        });
+    </script>
+
+</body>
+
+</html>

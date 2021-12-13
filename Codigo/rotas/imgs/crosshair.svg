@@ -1,0 +1,13 @@
+<svg id="b20f6a6c-4712-418c-bfdf-f60c672854c8" data-name="b96dd678-4b4d-43cd-b2e1-433b09d13e07" xmlns="http://www.w3.org/2000/svg" width="23.44" height="23.44" viewBox="0 0 23.44 23.44">
+  <title>crosshair</title>
+  <g>
+    <path d="M11.24,2.82v2.3h1.52V.53H11.24Z" transform="translate(-0.28 -0.28)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5"/>
+    <path d="M9,2.55a7.9,7.9,0,0,0-1.47.62,9.89,9.89,0,0,0-5,5.75c-.1.28-.19.58-.21.65v.14H3.91L4,9.31A8.49,8.49,0,0,1,9.31,4l.4-.13V3.13c0-.6,0-.79-.06-.79A5.1,5.1,0,0,0,9,2.55Z" transform="translate(-0.28 -0.28)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5"/>
+    <path d="M14.29,3.12v.79l.4.13A8.46,8.46,0,0,1,19,7.36a10.1,10.1,0,0,1,1,2l.13.4h1.58V9.6a7.31,7.31,0,0,0-.24-.77A10,10,0,0,0,15.1,2.57l-.65-.2h-.16Z" transform="translate(-0.28 -0.28)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5"/>
+    <path d="M.53,12v.76H5.12V11.24H.53Z" transform="translate(-0.28 -0.28)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5"/>
+    <path d="M18.88,12v.76h4.59V11.24H18.88Z" transform="translate(-0.28 -0.28)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5"/>
+    <path d="M2.37,14.45a11.77,11.77,0,0,0,.76,2,10,10,0,0,0,5.87,5l.66.2a2.63,2.63,0,0,0,.05-.79v-.78L9.31,20a9.45,9.45,0,0,1-1.95-1A8.49,8.49,0,0,1,4,14.69l-.13-.4H2.33Z" transform="translate(-0.28 -0.28)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5"/>
+    <path d="M20,14.69a10.1,10.1,0,0,1-1,2A8.54,8.54,0,0,1,14.69,20l-.4.13v.78a5.21,5.21,0,0,0,0,.79l.45-.12a9.94,9.94,0,0,0,4.34-2.64A9.22,9.22,0,0,0,21,16.23a12.55,12.55,0,0,0,.69-1.89,2.63,2.63,0,0,0-.79-.05h-.78Z" transform="translate(-0.28 -0.28)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5"/>
+    <path d="M11.24,21.18v2.29h1.52V18.88H11.24Z" transform="translate(-0.28 -0.28)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.5"/>
+  </g>
+</svg>

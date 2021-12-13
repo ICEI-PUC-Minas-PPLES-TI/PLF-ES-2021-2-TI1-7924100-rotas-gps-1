@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo Klug" title="Klug" src="./Documentacao/images/klug-logo.jpg"/>
+  <img alt="Logo Klug" title="Klug" src="./Documentacao/svg/Logo-Klug-3-branco.svg"/>
 </h1>
 
 <p align="center">Aplicação desenvolvida para a disciplina de <strong>"Trabalho Interdisciplinar: Aplicações Web"</strong>, com propósito de estudo.</p>
@@ -39,7 +39,6 @@ O objetivo do grupo é criar um aplicativo de rotas GPS que seja fidedigno as ru
 - Frederico dos Santos Ferreira de Andrade
 - Igor de Oliveira Martins dos Santos
 - Nikolas Augusto Vieira Louret
-- Rafael Fernandino Vitoretti
 
 ## Professores responsáveis
 

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@font-face {
+    font-family: Intro;
+    src: url(Fontes/intro/Intro.otf)
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Logo */
+
+.logo {
+    margin-top: 150px;
+    width: 100px;
+}
+
+
+/* Form do login */
+
+.newUserClass {
+    width: 400px;
+    margin: 50px auto 0;
+    color: #fff;
+    background-color: rgba(225, 225, 255, 0.2);
+    backdrop-filter: blur(3px);
+    padding: 40px 30px 20px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+#newUserForm h3 {
+    text-align: center;
+    font-weight: 600;
+}
+
+#newUserForm input {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input:focus {
+    border: none;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+
+/* Botões */
+
+.hudBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#btn_salvar {
+    background: linear-gradient( -45deg, rgba(88, 195, 255, 1) 0, rgba(0, 77, 230, 1) 40%, rgba(0, 59, 177, 1) 100%);
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    text-transform: capitalize;
+    color: #FFF;
+    border: none;
+    padding: 10px 20px;
+    margin: 30px 0 0;
+    transition: all 0.3s;
+}
+
+#btn_salvar:hover {
+    background: #FFF;
+    color: rgba(0, 77, 230, .8);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .1);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    body {
+        background-position: 50% 50%;
+    }
+    .logo {
+        margin-top: 50px;
+    }
+    .newUserClass {
+        width: 95%;
+    }
+}
