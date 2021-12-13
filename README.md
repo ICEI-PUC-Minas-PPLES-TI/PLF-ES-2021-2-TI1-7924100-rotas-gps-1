@@ -39,7 +39,6 @@ O objetivo do grupo é criar um aplicativo de rotas GPS que seja fidedigno as ru
 - Frederico dos Santos Ferreira de Andrade
 - Igor de Oliveira Martins dos Santos
 - Nikolas Augusto Vieira Louret
-- Rafael Fernandino Vitoretti
 
 ## Professores responsáveis
 
