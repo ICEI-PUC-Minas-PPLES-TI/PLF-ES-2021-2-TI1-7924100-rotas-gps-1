@@ -102,7 +102,7 @@ function imprimeDados() {
               <span>${produtosTroca[i].titulo}</span>
               <p>${produtosTroca[i].descricao}</p>
               <span>Preço: ${produtosTroca[i].preco} pontos</span>
-              <button id="button">Trocar</button>
+              <button type="button" id="button">Trocar</button>
               </article>
     `;
     }
@@ -111,10 +111,10 @@ function imprimeDados() {
     containerItens.innerHTML = conteudoTroca;
 
     // pega todos os botões da página
-    let botoes = document.querySelectorAll("button");
+    let botoes = document.querySelectorAll("button[type=button]");
 
     // percorre por todos os botões da página
-    for (let i = 0; i < botoes.length; i++) {
+    for (var i = 0; i < botoes.length; i++) {
         // adiciona um Event Listener em cada um deles
         botoes[i].addEventListener("click", function() {
             // confere se o valor do item da a troca é maior do que o saldo do usuário
@@ -192,10 +192,12 @@ function verificaSaldo(dados, botoes) {
 
 function toggleMenu() {
     const nav = document.getElementById("nav");
+    const subCabeçalho = document.querySelector(".subCabecalho");
     const main = document.querySelector(".main");
     const footer = document.querySelector(".footer");
 
     nav.classList.toggle('active');
+    subCabeçalho.classList.toggle('active');
     main.classList.toggle('active');
     footer.classList.toggle('active');
 }
