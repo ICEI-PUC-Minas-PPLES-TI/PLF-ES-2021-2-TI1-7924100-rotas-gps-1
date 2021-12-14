@@ -11,6 +11,23 @@ Um breve resumo do que se trata as página contidas neste diretório. Informaç�
 ## **add-endereço**
 
  Página para adicionar novos estabelecimentos no mapa, com informações de endereço, horário de funcionamento, descrição, site e nome.
+
 ## **Login**
 
  Página de Login da nossa aplicação. Dentro dela se encontram tanto a página de login para usuários já cadastrados na plataforma como também a página de cadastro para novos usuários.
+
+## **perfil**
+
+ Página de perfil do usuário logado. Mostra as informações dele e também dá a possibilidade de edição dessas informações.
+
+## **rotas**
+
+ Página de inicial da aplicação. Nesta página, o mapa é exibido e o usuário também pode criar sua rota, clicando no primeiro botão no menu inferior.
+
+## **suporte**
+
+ Página de suporte. Nela são exibidas algumas perguntas frequentes que podem ajudar usuários confusos. Também há a possibilidade de criação de perguntas e também de respondê-las, o que gera uma comunidade engajada de pessoas dispostas a ajudar.
+
+## **troca-pontos**
+
+ Página para troca de pontos que são ganhos usando a aplicação. O usuário pode trocar seus pontos por produtos e serviços de parceiros que são listados nessa página. O usuário pode ganhar seus pontos fazendo perguntas, respondendo perguntas que aparecem na página e também adicionando locais que ainda não estão cadastrados.
