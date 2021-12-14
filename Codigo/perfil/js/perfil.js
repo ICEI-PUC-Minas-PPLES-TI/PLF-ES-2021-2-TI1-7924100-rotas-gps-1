@@ -44,12 +44,17 @@ function perfil(data) {
                         </div>`);
 
     const location = document.querySelector('#location');
+    const enderecosCadastrados = document.querySelector('#enderecosCadastrados');
 
     // Verifica a existência do endereço do usuário. Se não existir, essa informação não aparece no perfil do usuário
     if ((data.address == undefined) || (data.address == ''))
         location.classList.add('hidden');
     else if (location.classList.contains('hidden'))
         location.classList.remove('hidden');
+
+    // Verifica a quantidade de endereços cadastrados
+    if ((data.endCadastrados == undefined))
+        enderecosCadastrados.innerText = 0;
 }
 
 function exibePerfil(user) {
@@ -65,11 +70,8 @@ function exibePerfil(user) {
     $('#txt_email').val(email);
 
     // Verifica se o atributo tem alguma informação. Caso contrário, no input para o enderço não é preenchido
-    if (address != undefined && address != '') {
-        console.log("address =", address);
+    if (user.address != undefined && user.address != '')
         $('#txt_address').val(address);
-    } else
-        $('#txt_address').val();
 }
 
 function toggleMenu() {

@@ -32,6 +32,7 @@ if (!usuarioCorrente)
         email: "",
         endereco: "",
         pontos: 0,
+        endCadastrados: 0
     };
 
 // Obtem a string JSON com os dados de usuários a partir do localStorage
@@ -47,6 +48,7 @@ if (!usuariosJSON) {
             email: "",
             endereco: "",
             pontos: 0,
+            endCadastrados: 0
         }, ],
     };
     localStorage.setItem("db_usuarios", JSON.stringify(usuariosJSON));
@@ -99,6 +101,7 @@ function addUser(username, nome, sobrenome, senha, email) {
         email: email,
         foto: "",
         pontos: 0,
+        endCadastrados: 0
     };
 
     // Insere o novo objeto no array
