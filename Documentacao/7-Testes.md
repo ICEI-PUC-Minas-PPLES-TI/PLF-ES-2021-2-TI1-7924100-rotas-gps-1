@@ -18,8 +18,7 @@
 > - Informar um login e senha corretos
 > - Confirmar a validação
 > - Aguardar o resultado
-
-• Após a confirmação de login, o sistema deverá direcionar o usuário para a página inicial 
+- Após a confirmação de login, o sistema deverá direcionar o usuário para a página inicial 
 de usuário logado
 
 
