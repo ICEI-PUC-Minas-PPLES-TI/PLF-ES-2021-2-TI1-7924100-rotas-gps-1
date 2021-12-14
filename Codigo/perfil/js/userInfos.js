@@ -35,7 +35,7 @@ function loadQuestions(user) {
 
                         // Atribuir ao elemento 'a' de cada 'li', um link para a pergunta correspondente na página de suport com o atributo criado
                         const linkPergunta = document.querySelector(`.perguntaLinha-${i} a`)
-                        linkPergunta.setAttribute('href', `../perguntas/perguntas.html?search=${queryString}`);
+                        linkPergunta.setAttribute('href', `..suporte/perguntas/perguntas.html?search=${queryString}`);
                         linkPergunta.setAttribute('target', '_blank');
                         linkPergunta.setAttribute('title', `${questions.titulo_pergunta}`);
                     }
