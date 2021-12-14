@@ -44,10 +44,7 @@ de usuário logado
 > Não ter saldo suficiente:
 > - Clicar no botão de troca no produto escolhido
 - Mensagem informando que não há saldo suficiente para aquele produto
-> - Clicar ou digitar os endereços de origem e destino da rota
-- Traçado da rota exibido no mapa
-> - Selecionar como quero fazer a rota ou se quero o trajeto mais rápido
-- Melhor rota exibida para aquele filtro selecionado
+
 
 ## Teste - Marcação de rota 
 
