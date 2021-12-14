@@ -382,8 +382,9 @@ footer.footer-container {
         text-align: end;
         font-size: 14px;
         color: #222;
+        font-family: 'Montserrat', sans-serif;
     }
-    #menu i,
+    #menu .fas,
     #menu .bx {
         text-align: end;
         display: block;
