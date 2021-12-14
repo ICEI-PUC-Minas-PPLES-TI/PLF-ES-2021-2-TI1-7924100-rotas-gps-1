@@ -100,7 +100,8 @@ function imprimeDados() {
     // coloca a frase abaixo com o nome do usuário no h1 do HTML
     nomeUsuario.innerHTML = `Olá, ${dadosUser.nome}`;
     // define o caminho da foto do usuário como o salvo no objeto
-    fotoUsuario.src = `${dadosUser.foto}`;
+    // fotoUsuario.src = `${dadosUser.foto}`;
+    fotoUsuario.src = `../perfil/img/perfil-sem-foto.png`;
     // carrega os pontos do usuário na tela
     pontosUsuarios.innerHTML = `${dadosUser.pontos} pontos`;
 
