@@ -30,45 +30,55 @@ let produtosTroca = [{
     },
 ];
 
+// Atribuir os dados do usuários à variáveis para manipulação
+var userLogin = JSON.parse(localStorage.getItem('usuarioCorrente'));
+var usuariosJSON = JSON.parse(localStorage.getItem('db_usuarios'));
+
 // função que lê os dados do localStorage
-function leDados() {
-    // pega os dados do localStorage
-    let strDados = localStorage.getItem("usuarioCorrente");
-    // cria o objeto de dados
-    let dadosUser = {};
+// function leDados() {
+//     // pega os dados do localStorage
+//     let strDados = localStorage.getItem("usuarioCorrente");
+//     // cria o objeto de dados
+//     let dadosUser = {};
 
-    // confere se existe algo no localStorage
-    if (strDados) {
-        // caso tenha, coloca dentro da variável de dados
-        dadosUser = JSON.parse(strDados);
-    } else {
-        // caso não tenha, cria o próprio objeto com os dados
-        dadosUser = {
-            email: "nickzada@gmail.com",
-            id: "977d97ac-890b-4e20-88c5-902580136c81",
-            nome: "Nícolas",
-            pontos: 600,
-            senha: "12345678",
-            sobrenome: "Carneiro",
-            username: "admin1234",
-            foto: "https://www.placecage.com/300/300"
-        };
-    }
+//     // confere se existe algo no localStorage
+//     if (strDados) {
+//         // caso tenha, coloca dentro da variável de dados
+//         dadosUser = JSON.parse(strDados);
+//     } else {
+//         // caso não tenha, cria o próprio objeto com os dados
+//         dadosUser = {
+//             email: "nickzada@gmail.com",
+//             id: "977d97ac-890b-4e20-88c5-902580136c81",
+//             nome: "Nícolas",
+//             pontos: 600,
+//             senha: "12345678",
+//             sobrenome: "Carneiro",
+//             username: "admin1234",
+//             foto: "https://www.placecage.com/300/300"
+//         };
+//     }
 
-    // mostra os dados no console
-    console.log(dadosUser);
+//     // chama a função que salva os dados do localStorage
+//     salvaDados(dadosUser);
 
-    // chama a função que salva os dados do localStorage
-    salvaDados(dadosUser);
-
-    // retorna o objeto, quando é chamada
-    return dadosUser;
-}
+//     // retorna o objeto, quando é chamada
+//     return dadosUser;
+// }
 
 // função que salva os dados no localStorage
-function salvaDados(dados) {
+function salvaDados(dados, valorAtual) {
     // salva os dados passados por parâmetro no localStorage
     localStorage.setItem("usuarioCorrente", JSON.stringify(dados));
+
+    // Identifica a posição do JSON do usuário logado
+    let index = usuariosJSON.user.map(obj => obj.id).indexOf(userLogin.id);
+
+    // Atualiza a pontuação do user
+    usuariosJSON.user[index].pontos = valorAtual;
+
+    // Salva essa nova pontuação no JSON de cadastro dos usuários
+    localStorage.setItem('db_usuarios', JSON.stringify(usuariosJSON));
 }
 
 // função que imprime os dados na tela
@@ -85,7 +95,7 @@ function imprimeDados() {
     let conteudoTroca = "";
 
     // define o objeto de dados como o retorno da função de ler dados
-    let dadosUser = leDados();
+    let dadosUser = JSON.parse(localStorage.getItem("usuarioCorrente"));
 
     // coloca a frase abaixo com o nome do usuário no h1 do HTML
     nomeUsuario.innerHTML = `Olá, ${dadosUser.nome}`;
@@ -102,7 +112,7 @@ function imprimeDados() {
               <span>${produtosTroca[i].titulo}</span>
               <p>${produtosTroca[i].descricao}</p>
               <span>Preço: ${produtosTroca[i].preco} pontos</span>
-              <button type="button" id="button">Trocar</button>
+              <button type="button" id="button" class=button-${i}>Trocar</button>
               </article>
     `;
     }
@@ -113,47 +123,43 @@ function imprimeDados() {
     // pega todos os botões da página
     let botoes = document.querySelectorAll("button[type=button]");
 
-    // percorre por todos os botões da página
-    for (var i = 0; i < botoes.length; i++) {
-        // adiciona um Event Listener em cada um deles
-        botoes[i].addEventListener("click", function() {
-            // confere se o valor do item da a troca é maior do que o saldo do usuário
-            if (dadosUser.produtosTrocas[i].preco > dadosUser.pontos) {
-                // caso seja, exibe uma mensagem de alerta avisando o usuário
-                alert(
-                    "Saldo insuficiente para trocar " +
-                    '"' +
-                    dadosUser.produtosTrocas[i].titulo +
-                    '"'
-                );
-            } else {
-                // caso tenha saldo, mostra o produto e o valor dele
-                alert(
-                    '"' +
-                    dadosUser.produtosTrocas[i].titulo +
-                    '"' +
-                    " trocado por " +
-                    dadosUser.produtosTrocas[i].preco +
-                    " pontos"
-                );
+    // adiciona um Event Listener em cada um deles
+    $(botoes).click(function(e) {
+        const id = e.target.className.substring(7);
 
-                // chama a função que troca pontos, passando o objeto de dados e a posição do botão
-                trocaPontos(dadosUser, i);
-            }
-        });
-    }
+        // confere se o valor do item da a troca é maior do que o saldo do usuário
+        if (produtosTroca[id].preco > dadosUser.pontos) {
+            // caso seja, exibe uma mensagem de alerta avisando o usuário
+            alert(
+                "Saldo insuficiente para trocar " +
+                '"' +
+                produtosTroca[id].titulo +
+                '"'
+            );
+        } else {
+            // caso tenha saldo, mostra o produto e o valor dele
+            alert(
+                '"' +
+                produtosTroca[id].titulo +
+                '"' +
+                " trocado por " +
+                produtosTroca[id].preco +
+                " pontos"
+            );
+
+            // chama a função que troca pontos, passando o objeto de dados e a posição do botão
+            trocaPontos(dadosUser, id);
+        }
+    });
 
     // chama a função que verifica o saldo do usuário
     verificaSaldo(dadosUser, botoes);
-
-    // mostra os botões no console, apenas para controle
-    console.log(botoes);
 }
 
 // função que troca os pontos
-function trocaPontos(dados, botao) {
+function trocaPontos(dados, id) {
     // pega o valor do item a ser trocado
-    let valorDescontado = dados.produtosTrocas[botao].preco;
+    let valorDescontado = produtosTroca[id].preco;
 
     // pega o valor de pontos que o usuário tem atualmente
     let valorAtual = dados.pontos;
@@ -171,14 +177,14 @@ function trocaPontos(dados, botao) {
     pontosUsuarios.innerHTML = `${valorAtual} pontos`;
 
     // chama a função que salva os dados atualizados no localStorage
-    salvaDados(dados);
+    salvaDados(dados, valorAtual);
 
     // chama a função que verifica o saldo do usuário
     verificaSaldo(dados);
 }
 
 // função que verifica o saldo do usuário, apenas por questões estéticas
-function verificaSaldo(dados, botoes) {
+function verificaSaldo(dados) {
     // pega os pontos que o usuário tem atualmente
     let pontos = dados.pontos;
 
@@ -206,8 +212,6 @@ function toggleMenu() {
 const LOGIN_URL = "../Login/login.html";
 const PERFIL_URL = "../perfil/perfilPrincipal.html";
 
-var userLogin = JSON.parse(localStorage.getItem('usuarioCorrente'));
-
 $(document).ready(function() {
     localStorage.setItem('link', JSON.stringify(""));
 
@@ -225,6 +229,11 @@ $(document).ready(function() {
     login.addEventListener('click', function() {
         localStorage.setItem('link', JSON.stringify("../troca-pontos/troca-pontos.html"));
     })
+
+    // userLogin.pontos = 600;
+
+    // localStorage.setItem("usuarioCorrente", JSON.stringify(userLogin));
+
 })
 
 // quando todos os itens da tela terminas de ser carregados, chama a função imprimeDados
