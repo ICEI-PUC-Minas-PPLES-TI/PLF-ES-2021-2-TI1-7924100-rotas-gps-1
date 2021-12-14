@@ -106,5 +106,5 @@ function addUser(username, nome, sobrenome, senha, email) {
 
     // Salva o novo banco de dados com o novo usuário no localStorage
     localStorage.setItem("db_usuarios", JSON.stringify(usuariosJSON));
-    localStorage.setItem("usuarioCorrente", JSON.stringify(usuariosJSON));
+    localStorage.setItem("usuarioCorrente", JSON.stringify(usuario));
 }
