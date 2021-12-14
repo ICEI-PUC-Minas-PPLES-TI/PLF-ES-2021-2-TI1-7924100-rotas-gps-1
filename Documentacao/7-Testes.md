@@ -47,9 +47,19 @@ de usuário logado
 
 
 ## Teste - Marcação de rota 
+- Passo a passo:
+> - Autorizar o acesso à localização
+- Mapa aberto com a localização do usuário ao centro
+> - Clicar ou digitar os endereços de origem e destino da rota
+- Traçado da rota exibido no mapa
+> - Selecionar como quero fazer a rota ou se quero o trajeto mais rápido
+- Melhor rota exibida para aquele filtro selecionado
 
 ## Teste - Edição de rota - RF-007
-
+- Passo a passo:
+> - Após a marcação da rota desejada, trocar o endereço do local
+> que quero ou clicar em cima do local no mapa
+- Melhor rota exibida para aquele filtro selecionado
 
 
 ## Avaliação
