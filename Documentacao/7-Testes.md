@@ -18,13 +18,21 @@
 > - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
 > -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
 
-## Ferramentas de Testes (Opcional)
+## Teste - Cadastro de usuário - RF-010
 
-> Comente sobre as ferramentas de testes utilizadas.
-> 
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+## Teste - Efetuação do Login - RF-011
+
+## Teste - Adicionar dúvida (suporte) - RF-003
+
+## Teste - Responder dúvida (suporte) - RF-003
+
+## Teste - Troca de pontos na loja - RF-004
+
+## Teste - Marcação de rota 
+
+## Teste - Edição de rota - RF-007
+
+
 
 ## Avaliação
 
