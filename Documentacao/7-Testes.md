@@ -3,8 +3,8 @@
 <span style="color:red">Pré-requisitos: <a href="6-Implementação.md"> Projeto da Solução</a></span>
 
 
-> Conexão com a Internet;
-> Utilização de um navegador padrâo (Chrome, Opera, Edge, etc)
+> - Conexão com a Internet;
+> - Utilização de um navegador padrâo (Chrome, Opera, Edge, etc)
 
 ## Plano de Testes
 
