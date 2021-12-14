@@ -229,11 +229,6 @@ $(document).ready(function() {
     login.addEventListener('click', function() {
         localStorage.setItem('link', JSON.stringify("../troca-pontos/troca-pontos.html"));
     })
-
-    // userLogin.pontos = 600;
-
-    // localStorage.setItem("usuarioCorrente", JSON.stringify(userLogin));
-
 })
 
 // quando todos os itens da tela terminas de ser carregados, chama a função imprimeDados
