@@ -129,7 +129,7 @@ na tela inicial o endereço e, portanto, o marcador editados
 
 ## Avaliação
 
-> Discorra sobre os resultados do teste. Ressaltando pontos fortes e
-> fracos identificados na solução. Comente como o grupo pretende atacar
-> esses pontos nas próximas iterações. Apresente as falhas detectadas e
-> as melhorias geradas a partir dos resultados obtidos nos testes.
+> Os resultados dos testes foram bastante satisfatórios, sendo registrados os testes finais. Nesses testes conseguimos identificar
+> problemas no cadastro de usuários, que não estavam sendo salvos no LocalStorage, e assim, resultavam em falhas durante todo o 
+> percurso do usuário. Além disso, "bugs" recorrentes no sistema nos dirigiram para uma versão mais otimizada e fluída da 
+> aplicação.
