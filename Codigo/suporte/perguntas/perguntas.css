@@ -354,12 +354,19 @@ input::-webkit-calendar-picker-indicator {
     font-weight: 600;
 }
 
-.textTittle {
-    margin: 0 auto;
+.textTitle {
+    margin: 0 auto 10px;
     max-width: 700px;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     color: #777;
+}
+
+.textPoints {
+    font-size: 12px;
+    color: #777;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .lineRepos {
