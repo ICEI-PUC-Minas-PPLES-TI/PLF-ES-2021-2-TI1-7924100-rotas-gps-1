@@ -117,6 +117,10 @@ header .container-header {
   color: var(--bg);
 }
 
+#nome-usuario {
+  font-weight: bold !important;
+}
+
 header .container-header img {
   border-radius: 50rem;
   width: 5rem;
