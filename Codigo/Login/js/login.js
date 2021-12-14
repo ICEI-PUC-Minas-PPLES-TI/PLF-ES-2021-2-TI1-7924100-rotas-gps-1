@@ -22,18 +22,6 @@ function generateUUID() {
 }
 
 var usuarioCorrente = JSON.parse(localStorage.getItem("usuarioCorrente"));
-if (!usuarioCorrente)
-    usuarioCorrente = {
-        id: "",
-        username: "",
-        nome: "",
-        sobrenome: "",
-        senha: "",
-        email: "",
-        endereco: "",
-        pontos: 0,
-        endCadastrados: 0
-    };
 
 // Obtem a string JSON com os dados de usuários a partir do localStorage
 var usuariosJSON = JSON.parse(localStorage.getItem("db_usuarios"));
