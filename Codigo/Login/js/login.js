@@ -70,6 +70,7 @@ function loginUser(username, senha) {
             usuarioCorrente.senha = usuario.senha;
             usuarioCorrente.endereco = usuario.address;
             usuarioCorrente.pontos = usuario.pontos;
+            usuarioCorrente.endCadastrados = usuario.endCadastrados;
 
             // Salva os dados do usuário corrente no Session Storage, mas antes converte para string
             localStorage.setItem("usuarioCorrente", JSON.stringify(usuarioCorrente));
