@@ -13,7 +13,7 @@
 ## Teste - Cadastro de usuário - RF-010
 
 ## Teste - Efetuação do Login - RF-011
->  Passo a passo:
+- Passo a passo:
 > - Acessar tela de login
 > - Informar um login e senha corretos
 > - Confirmar a validação
