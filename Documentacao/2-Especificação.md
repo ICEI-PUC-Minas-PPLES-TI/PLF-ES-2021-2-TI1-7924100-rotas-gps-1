@@ -35,18 +35,19 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito            | Prioridade |
-|------|-----------------------------------|-----|
-|RF-001| Mostrar áreas perigosas           | ALTA | 
-|RF-002| Mapa atualizado                   | ALTA | 
-|RF-003| Feedbacks dos usuários            | ALTA |
-|RF-004| Mostrar a elevação da ruas        | ALTA |
-|RF-005| Informar trechos mais carregados  | MÉDIA |
-|RF-006| Editar a rota                     | MÉDIA |
-|RF-007| Filtrar rotas                     | MÉDIA |
-|RF-008| Escolher o perfil do percurso     | BAIXA |
-|RF-009| Cadastro                          | BAIXA |
-|RF-010| Efetuar Login                     | BAIXA |
+|ID    | Descrição do Requisito                            | Prioridade |
+|------|---------------------------------------------------    |-----|
+|RF-001| Mostrar áreas perigosas no mapa                       | ALTA | 
+|RF-002| Mapa com atualizações recorrentes                     | ALTA | 
+|RF-003| Feedbacks dos usuários quanto às rotas (suporte)      | ALTA |
+|RF-004| Troca de pontos acumulados ao usar o App              | ALTA |
+|RF-005| Mostrar a elevação da ruas                            | MÉDIA |
+|RF-006| Informar trechos mais carregados, congestionados      | MÉDIA |
+|RF-007| Editar a rota do usuário                              | MÉDIA |
+|RF-008| Filtrar rotas de acordo com a preferência do usuário  | MÉDIA |
+|RF-009| Escolher o perfil do percurso                         | BAIXA |
+|RF-0010| Cadastro de usuário                                   | BAIXA |
+|RF-011| Efetuar Login                                         | BAIXA |
 
 
 ### Requisitos não Funcionais

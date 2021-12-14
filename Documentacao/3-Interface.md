@@ -24,8 +24,8 @@ Com o User Flow definido, buscamos referências de interface e funcionalidades p
 
 ## Sketches para criação da Interface
 
-![Sketches para criação da Interface](../Artefatos/Design%20Thinking/images/../../Design%20Thinking/images/Rotas%20GPS%20-%20Sketches.jpg)
-Traçadas as principais funcionalidades e o estilo de interface que seguiríamos, desenhamos Sketches para guiar a criação dos wireframes do Klug.
+[![Sketches para criação da Interface](../Artefatos/Design%20Thinking/images/../../Design%20Thinking/images/Rotas%20GPS%20-%20Frame%201.jpg)](https://miro.com/app/board/o9J_lyl521s=/)
+Sketch usada como base para a prototipação do projeto.
 
 ## Wireframes
 
