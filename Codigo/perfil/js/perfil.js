@@ -2,6 +2,13 @@
 var user = JSON.parse(localStorage.getItem('usuarioCorrente'));
 
 window.addEventListener('load', function() {
+    // Se o user não estiver logado (user = null), a página não carrega e o usuáruio é direcionado para a página de login
+    if (!user) {
+        alert("Faça o login");
+        window.location.replace("../Login/login.html");
+        return;
+    }
+
     // Ativa as funções
     perfil(user);
     exibePerfil(user);
@@ -33,7 +40,7 @@ function perfil(data) {
                                     : ${data.email}
                                 </div>
                                 <div id="enderecosCadastrados">
-                                    <span><i class="fas fa-map-marker-alt"></i> Endereços Cadastrados</span>
+                                    <span><i class="fas fa-location-arrow"></i>Endereços<br>Cadastrados</span>
                                     : ${data.endCadastrados}
                                 </div>
                                 <div id="pontos">

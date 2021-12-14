@@ -57,7 +57,7 @@ header a,
     color: #FFF;
     text-decoration: none;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 nav a:hover,
@@ -98,7 +98,7 @@ nav a:hover,
 
 #menu a {
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 #menu li i {
@@ -141,7 +141,7 @@ nav a:hover,
     display: flex;
     justify-content: initial;
     align-items: center;
-    width: 125px;
+    width: 150px;
 }
 
 i.fas {
@@ -672,7 +672,10 @@ div.logo-redes {
         width: 15px;
     }
     .infos div span {
-        width: 105px;
+        width: 130px;
+    }
+    #enderecosCadastrados span {
+        text-align: left;
     }
     .editPerfil {
         width: 90%;
@@ -786,7 +789,7 @@ div.logo-redes {
         width: 15px;
     }
     .infos div span {
-        width: 110px;
+        width: 120px;
     }
     .infos div {
         font-size: 13px;

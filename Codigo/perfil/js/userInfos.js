@@ -35,7 +35,7 @@ function loadQuestions(user) {
 
                         // Atribuir ao elemento 'a' de cada 'li', um link para a pergunta correspondente na página de suport com o atributo criado
                         const linkPergunta = document.querySelector(`.perguntaLinha-${i} a`)
-                        linkPergunta.setAttribute('href', `https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/suporte/perguntas/perguntas.html?search=${queryString}`);
+                        linkPergunta.setAttribute('href', `../perguntas/perguntas.html?search=${queryString}`);
                         linkPergunta.setAttribute('target', '_blank');
                         linkPergunta.setAttribute('title', `${questions.titulo_pergunta}`);
                     }
