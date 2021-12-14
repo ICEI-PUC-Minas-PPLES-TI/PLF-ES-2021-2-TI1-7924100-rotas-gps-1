@@ -63,7 +63,6 @@ botões “Editar” e “Apagar”
 - Após clicar no botão “Apagar”, o sistema deverá mostrar na tela 
 inicial sem a pergunta apagada
 
-## Teste - Responder dúvida (suporte) - RF-003
 
 ## Teste - Troca de pontos na loja - RF-004
 - Passo a passo:
