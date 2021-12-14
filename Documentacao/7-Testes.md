@@ -31,8 +31,38 @@ de usuário logado
 
 
 ## Teste - Adicionar dúvida (suporte) - RF-003
+- Passo a passo:
+> - Efetuar o Login
+> - Clicar no botão "Adicionar pergunta"
+> - Preencher os campos corretamente
+> - Clicar no botão "Postar"
+- Após postar a nova pergunta, o sistema deverá mostrar na tela inicial a nova pergunta registrada
 
-## Teste - Responder dúvida (suporte) - RF-003
+## Teste - Editar dúvida (suporte) - RF-003
+- Passo a passo:
+> - Clicar em uma pergunta
+- Quando clicado em uma pergunta qualquer, o sistema deverá 
+mostrar um modal contendo a pergunta selecionada, com dois 
+botões “Editar” e “Apagar”
+> - Clicar no botâo "Editar"
+> - Preencher os campos corretamente
+> - Clicar no botão "Confirmar"
+- Ao clicar no botão “Editar”, o sistema deverá 
+mostrar um modal com três campos preenchidos com a 
+pergunta selecionada, prontos para a edição. Após fazer as 
+alterações e clicar no botão “Confirmar”, o sistema deverá 
+mostrar na tela inicial a pergunta editada 
+
+## Teste - Apagar dúvida (suporte) - RF-003
+- Passo a passo:
+> - Clicar em uma pergunta
+- Quando clicado em uma pergunta qualquer, o sistema deverá 
+mostrar um modal contendo a pergunta selecionada, com dois 
+botões “Editar” e “Apagar”
+> - Clicar no botâo "Apagar"
+- Após clicar no botão “Apagar”, o sistema deverá mostrar na tela 
+inicial sem a pergunta apagada
+
 
 ## Teste - Troca de pontos na loja - RF-004
 - Passo a passo:
@@ -61,6 +91,7 @@ de usuário logado
 > que quero ou clicar em cima do local no mapa
 - Melhor rota exibida para aquele filtro selecionado
 
+## Teste - Adicionar endereço
 
 ## Avaliação
 
