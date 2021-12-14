@@ -6,10 +6,7 @@
  Pesquisas utilizadas como um aprofundamento da justificativa do público-alvo:
 > Estadão Blue Studio, Summit Mobilidade Urbana. **Número de motoristas por aplicativo cresce 137% em 8 anos**. Disponível em: https://summitmobilidade.estadao.com.br/compartilhando-o-caminho/numero-de-motoristas-por-aplicativo-cresce-137-em-8-anos/. Acesso em: 14 out. 2021.
 
-
-
-
-> - https://www.acritica.com/channels/manaus/news/homens-sao-maioria-no-transito-mas-mulheres-sao-mais-cuidadosas-no-volante
+> Portal A Crítica. **Homens são maioria no trânsito, mas mulheres são mais cuidadosas no volante**. Disponível em: https://www.acritica.com/channels/manaus/news/homens-sao-maioria-no-transito-mas-mulheres-sao-mais-cuidadosas-no-volante. Acesso em: 14 out. 2021.
 ##
 
  Aplicações usadas como referências para o projeto: 
