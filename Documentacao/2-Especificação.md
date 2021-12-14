@@ -39,7 +39,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |------|---------------------------------------------------    |-----|
 |RF-001| Mostrar áreas perigosas no mapa                       | ALTA | 
 |RF-002| Mapa com atualizações recorrentes                     | ALTA | 
-|RF-003| Feedbacks dos usuários quanto às rotas                | ALTA |
+|RF-003| Feedbacks dos usuários quanto às rotas (suporte)      | ALTA |
 |RF-004| Mostrar a elevação da ruas                            | ALTA |
 |RF-005| Informar trechos mais carregados, congestionados      | MÉDIA |
 |RF-006| Editar a rota do usuário                              | MÉDIA |
