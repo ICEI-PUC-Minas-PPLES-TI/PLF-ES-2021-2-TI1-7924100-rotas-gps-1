@@ -1,6 +1,6 @@
 # Referências
  Pesquisa utilizada para o contexto do projeto:
-> - http://g1.globo.com/bom-dia-brasil/noticia/2014/01/criado-para-ajudar-motoristas-gps-pode-causar-problemas-e-acidentes.html
+> G1 - BOM DIA BRASIL. **Criado para ajudar motoristas, GPS pode causar problemas e acidentes**. Disponível em: https://g1.globo.com/bom-dia-brasil/noticia/2014/01/criado-para-ajudar-motoristas-gps-pode-causar-problemas-e-acidentes.html. Acesso em: 14 out. 2021.
 ##
 
  Pesquisas utilizadas como um aprofundamento da justificativa do público-alvo:
