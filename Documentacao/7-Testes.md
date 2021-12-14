@@ -3,29 +3,64 @@
 <span style="color:red">Pré-requisitos: <a href="6-Implementação.md"> Projeto da Solução</a></span>
 
 
-> Apresente os cenários de testes utilizados na realização dos testes da
-> sua aplicação. Escolha cenários de testes que demonstrem os requisitos
-> sendo satisfeitos.
+> - Conexão com a Internet
+> - Utilização de um navegador padrâo (Chrome, Opera, Edge, etc)
 
 ## Plano de Testes
 
-> Enumere quais cenários de testes foram selecionados para teste. Neste
-> tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo
-> de usuários que foi escolhido para participar do teste e as
-> ferramentas utilizadas.
-> 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
+> Considerando o site funcional e uma conexão com a internet estável do usuário:
 
-## Ferramentas de Testes (Opcional)
+## Teste - Cadastro de usuário - RF-010
+- Passo a passo:
+> - Clicar no botão de registrar usuário
+> - nformar os dados de usuário 
+conforme orientações da tela
+> - Confirmar o registro do usuário
+> - Efetuar o login com as 
+informações registradas
+- Os dados do usuário devem ser registrados no Local Storage
 
-> Comente sobre as ferramentas de testes utilizadas.
-> 
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+## Teste - Efetuação do Login - RF-011
+- Passo a passo:
+> - Acessar tela de login
+> - Informar um login e senha corretos
+> - Confirmar a validação
+> - Aguardar o resultado
+- Após a confirmação de login, o sistema deverá direcionar o usuário para a página inicial 
+de usuário logado
+
+
+## Teste - Adicionar dúvida (suporte) - RF-003
+
+## Teste - Responder dúvida (suporte) - RF-003
+
+## Teste - Troca de pontos na loja - RF-004
+- Passo a passo:
+> Ter saldo suficiente:
+> - Clicar no botão de troca no produto escolhido
+- Troca realizada
+- Saldo atualizado na tela e no JSON
+
+> Não ter saldo suficiente:
+> - Clicar no botão de troca no produto escolhido
+- Mensagem informando que não há saldo suficiente para aquele produto
+
+
+## Teste - Marcação de rota 
+- Passo a passo:
+> - Autorizar o acesso à localização
+- Mapa aberto com a localização do usuário ao centro
+> - Clicar ou digitar os endereços de origem e destino da rota
+- Traçado da rota exibido no mapa
+> - Selecionar como quero fazer a rota ou se quero o trajeto mais rápido
+- Melhor rota exibida para aquele filtro selecionado
+
+## Teste - Edição de rota - RF-007
+- Passo a passo:
+> - Após a marcação da rota desejada, trocar o endereço do local
+> que quero ou clicar em cima do local no mapa
+- Melhor rota exibida para aquele filtro selecionado
+
 
 ## Avaliação
 
