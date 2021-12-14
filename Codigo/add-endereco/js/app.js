@@ -97,6 +97,8 @@ stores.features.forEach(function(store, i) {
         store.properties.id = i;
 });
 
+let totalAddressCadastrados;
+
 map.on('load', () => {
     /* Add the data to your map as a layer */
     map.addSource('places', {
@@ -110,6 +112,32 @@ map.on('load', () => {
     $('.mapboxgl-canvas, #closeMobile').on('click', function() {
         hideMenuLateral();
     })
+
+    totalAddressCadastrados = 0;
+
+    // Identifica a quantidade de endereços cadastrados pelo usuário
+    for (var i = 0; i < stores.features.length; i++) {
+        var propreties = stores.features[i].properties;
+        if (propreties.id == userLogin.id)
+            totalAddressCadastrados++;
+    }
+
+    // Identifica a posição do JSON do usuário logado
+    let index = usuariosJSON.user.map(obj => obj.id).indexOf(userLogin.id);
+
+    // Atualiza os dados no Local Storage dos endereços cadastrados
+    if (index >= 0) {
+        if (userLogin.pontos >= 0) {
+            usuariosJSON.user[index].endCadastrados = totalAddressCadastrados;
+            userLogin.endCadastrados = totalAddressCadastrados;
+
+            // Salva os dados no Local Storage
+            localStorage.setItem('db_usuarios', JSON.stringify(usuariosJSON));
+            localStorage.setItem('usuarioCorrente', JSON.stringify(userLogin));
+        }
+    }
+
+    console.log(totalAddressCadastrados);
 });
 
 function addMarkers() {
@@ -371,15 +399,8 @@ function insertAddress(endereco) {
     // Identifica a posição do JSON do usuário logado
     let index = usuariosJSON.user.map(obj => obj.id).indexOf(userLogin.id);
 
-    // Identifica a quantidade de endereços cadastrados pelo usuário
-    let totalAddressCadastrados = 0;
 
-    for (var i = 0; i < stores.features.length; i++) {
-        var propreties = stores.features[i].properties;
-        if (propreties.id == userLogin.id)
-            totalAddressCadastrados++;
-    }
-
+    totalAddressCadastrados++;
     console.log(totalAddressCadastrados)
 
     // Adiciona os pontos no JSON do usuário por adicionar um novo endereço no mapa
@@ -429,6 +450,7 @@ function deleteAddress(id) {
     // Subtrai a quantidade de endereços cadastrados pelo usuário
     let totalAddressCadastrados = usuariosJSON.user[index].endCadastrados;
 
+    // Subtrai o número de endereços cadastrados caso um seja apagado
     if (totalAddressCadastrados)
         totalAddressCadastrados--;
     console.log(totalAddressCadastrados)
