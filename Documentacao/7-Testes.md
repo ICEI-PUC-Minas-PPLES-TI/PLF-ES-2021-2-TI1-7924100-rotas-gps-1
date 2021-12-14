@@ -3,9 +3,8 @@
 <span style="color:red">Pré-requisitos: <a href="6-Implementação.md"> Projeto da Solução</a></span>
 
 
-> Apresente os cenários de testes utilizados na realização dos testes da
-> sua aplicação. Escolha cenários de testes que demonstrem os requisitos
-> sendo satisfeitos.
+> Conexão com a Internet;
+> Utilização de um navegador padrâo (Chrome, Opera, Edge, etc)
 
 ## Plano de Testes
 
