@@ -47,4 +47,10 @@ O objetivo do grupo é criar um aplicativo de rotas GPS que seja fidedigno as ru
 
 ## Instruções de utilização
 
-Para usar nossa aplicação, acesse [nossa página inicial](https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/rotas/rotas.html). Algumas funcionalidades (como adicionar locais, perguntas e trocar pontos) só estão disponíveis após realizar o login ou cadastro.
+ - O usuário deverá acessar o link https://icei-puc-minas-pples-ti.github.io/PLF-ES-2021-2-TI1-7924100-rotas-gps-1/Codigo/rotas/rotas.html
+ - Após ser direcionado para o mapa, o usuário irá clicar em "Entrar", onde fará seu cadastro se não possuir um, e efetivar o seu login 
+ - O usuário terá a opção de criar uma rota ao selecionar o primeiro botão em sua barra central de opções, colocando (ou clicando) em seu ponto de partida e destino
+ - Poderá adicionar um endereço, no botão de mesmo nome, em que abrirá um formulário para preencher todas as informações sobre o estabelecimento
+ - Conseguirá acessar a loja de pontos, podendo trocar seus respectivos pontos por recompensas
+ - Habilitará a página de suporte, onde um usuário pode postar suas dúvidas quanto à aplicação, e também responder dúvidas de outros usuários.
+
