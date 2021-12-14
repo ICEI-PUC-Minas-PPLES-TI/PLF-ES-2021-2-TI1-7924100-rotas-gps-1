@@ -213,6 +213,17 @@ const LOGIN_URL = "../Login/login.html";
 const PERFIL_URL = "../perfil/perfilPrincipal.html";
 
 $(document).ready(function() {
+    // Se o user não estiver logado (user = null), a página não carrega e o usuáruio é direcionado para a página de login
+    if (!userLogin) {
+        // Limpar a página inteira
+        $('body').html("");
+        // Alerta para o user fazer o login
+        alert("Faça o login");
+        // Redirecionamento para a página de login
+        window.location.replace(LOGIN_URL);
+        // Interrompe as outras funções
+        return;
+    }
     localStorage.setItem('link', JSON.stringify(""));
 
     const login = document.querySelector('#loginProfile');

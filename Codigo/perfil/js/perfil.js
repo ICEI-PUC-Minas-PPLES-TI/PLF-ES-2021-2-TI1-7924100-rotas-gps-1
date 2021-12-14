@@ -4,8 +4,13 @@ var user = JSON.parse(localStorage.getItem('usuarioCorrente'));
 window.addEventListener('load', function() {
     // Se o user não estiver logado (user = null), a página não carrega e o usuáruio é direcionado para a página de login
     if (!user) {
+        // Limpar a página inteira
+        $('body').html("");
+        // Alerta para o user fazer o login
         alert("Faça o login");
+        // Redirecionamento para a página de login
         window.location.replace("../Login/login.html");
+        // Interrompe as outras funções
         return;
     }
 
