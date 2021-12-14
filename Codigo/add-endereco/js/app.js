@@ -399,9 +399,8 @@ function insertAddress(endereco) {
     // Identifica a posição do JSON do usuário logado
     let index = usuariosJSON.user.map(obj => obj.id).indexOf(userLogin.id);
 
-
+    // Soma o número de endereços cadastrados caso um seja adicionado
     totalAddressCadastrados++;
-    console.log(totalAddressCadastrados)
 
     // Adiciona os pontos no JSON do usuário por adicionar um novo endereço no mapa
     if (index >= 0) {
@@ -453,7 +452,6 @@ function deleteAddress(id) {
     // Subtrai o número de endereços cadastrados caso um seja apagado
     if (totalAddressCadastrados)
         totalAddressCadastrados--;
-    console.log(totalAddressCadastrados)
 
     // Subtrai os pontos no JSON do usuário por apagar uma endereço cadastrado
     if (index >= 0) {
