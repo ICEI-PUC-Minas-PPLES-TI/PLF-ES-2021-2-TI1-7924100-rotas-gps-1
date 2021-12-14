@@ -1,7 +1,7 @@
 # Contexto do Projeto
 Atualmente, há um crescente número de aplicativos que utilizam como ferramenta básica a interação com as ruas do mundo real, por meio de rotas de GPS, como Uber, Ifood, 99POP. Dessa forma, uma grande problemática torna-se preocupante, a falta de precisão das rotas e mapas, além do défict de aplicações que concentram diversas funcionalidades no mesmo sistema, em que visam a melhor experiência do usuário, sendo imprescindível um novo aplicativo que junte a precisão adequada com as melhores soluções na opinião do usuário. Sendo assim, o Klug surge para satisfazer as principais dores do usuário, com precisão e variedade.
 ## Problema
-> O problema que a aplicação deve resolver são erros ocorrem devido a rotas imprecisas e pouco realistas, acarretando em caminhos pouco práticos ou até mesmo inviável.
+> O problema que a aplicação deve resolver são erros ocorrem devido a rotas imprecisas e pouco realistas, acarretando em caminhos pouco práticos ou até mesmo inviáveis.
 > A aplicação será usada ao planejar as rotas que serão seguidas, tanto por motoristas e entregadores de apps e empresas privadas quanto para usuários que também
 > procuram soluções em suas rotas pessoais devido problemas semelhantes.
 
