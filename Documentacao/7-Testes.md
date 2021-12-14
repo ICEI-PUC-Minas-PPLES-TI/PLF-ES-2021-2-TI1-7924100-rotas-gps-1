@@ -11,6 +11,14 @@
 > Considerando o site funcional e uma conexão com a internet estável do usuário:
 
 ## Teste - Cadastro de usuário - RF-010
+- Passo a passo:
+> - Clicar no botão de registrar usuário
+> - nformar os dados de usuário 
+conforme orientações da tela
+> - Confirmar o registro do usuário
+> - Efetuar o login com as 
+informações registradas
+- Os dados do usuário devem ser registrados no Local Storage
 
 ## Teste - Efetuação do Login - RF-011
 - Passo a passo:
