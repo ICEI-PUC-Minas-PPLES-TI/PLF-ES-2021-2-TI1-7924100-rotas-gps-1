@@ -81,6 +81,10 @@ body {
     flex-direction: column;
 }
 
+#salvarLink {
+    margin: 30px 0 0;
+}
+
 #btn_salvar {
     background: linear-gradient( -45deg, rgba(88, 195, 255, 1) 0, rgba(0, 77, 230, 1) 40%, rgba(0, 59, 177, 1) 100%);
     border-radius: 20px;
@@ -92,7 +96,6 @@ body {
     color: #FFF;
     border: none;
     padding: 10px 20px;
-    margin: 30px 0 0;
     transition: all 0.3s;
 }
 
