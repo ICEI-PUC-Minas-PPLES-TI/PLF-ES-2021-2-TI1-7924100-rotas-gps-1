@@ -1,3 +1,3 @@
 # Documentação do Projeto
 
-Inclua documentação do projeto, como relatórios da PROEX.
+Toda a documentação de nosso projeto pode ser consultada aqui.
