@@ -2,6 +2,18 @@
 var user = JSON.parse(localStorage.getItem('usuarioCorrente'));
 
 window.addEventListener('load', function() {
+    // Se o user não estiver logado (user = null), a página não carrega e o usuáruio é direcionado para a página de login
+    if (!user) {
+        // Limpar a página inteira
+        $('body').html("");
+        // Alerta para o user fazer o login
+        alert("Faça o login");
+        // Redirecionamento para a página de login
+        window.location.replace("../Login/login.html");
+        // Interrompe as outras funções
+        return;
+    }
+
     // Ativa as funções
     perfil(user);
     exibePerfil(user);
@@ -32,6 +44,10 @@ function perfil(data) {
                                     <span><i class="fas fa-envelope"></i> Email</span>
                                     : ${data.email}
                                 </div>
+                                <div id="enderecosCadastrados">
+                                    <span><i class="fas fa-location-arrow"></i>Endereços<br>Cadastrados</span>
+                                    : ${data.endCadastrados}
+                                </div>
                                 <div id="pontos">
                                     <span><i class="fas fa-ticket-alt"></i> Pontos</span>
                                     : ${data.pontos}
@@ -40,12 +56,17 @@ function perfil(data) {
                         </div>`);
 
     const location = document.querySelector('#location');
+    const enderecosCadastrados = document.querySelector('#enderecosCadastrados');
 
     // Verifica a existência do endereço do usuário. Se não existir, essa informação não aparece no perfil do usuário
     if ((data.address == undefined) || (data.address == ''))
         location.classList.add('hidden');
     else if (location.classList.contains('hidden'))
         location.classList.remove('hidden');
+
+    // Verifica a quantidade de endereços cadastrados
+    if ((data.endCadastrados == undefined))
+        enderecosCadastrados.innerText = 0;
 }
 
 function exibePerfil(user) {
@@ -61,11 +82,8 @@ function exibePerfil(user) {
     $('#txt_email').val(email);
 
     // Verifica se o atributo tem alguma informação. Caso contrário, no input para o enderço não é preenchido
-    if (address != undefined && address != '') {
-        console.log("address =", address);
+    if (user.address != undefined && user.address != '')
         $('#txt_address').val(address);
-    } else
-        $('#txt_address').val();
 }
 
 function toggleMenu() {

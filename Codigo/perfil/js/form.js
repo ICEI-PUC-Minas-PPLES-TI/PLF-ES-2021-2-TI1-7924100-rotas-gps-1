@@ -201,8 +201,7 @@ function mudarSenha() {
 
 // Apaga os dados do usuário corrente no sessionStorage
 function logoutUser() {
-    const perfilCorrente = {};
-    localStorage.setItem('usuarioCorrente', JSON.stringify(perfilCorrente));
+    localStorage.removeItem('usuarioCorrente');
     window.location.href = LOGIN_URL;
 }
 

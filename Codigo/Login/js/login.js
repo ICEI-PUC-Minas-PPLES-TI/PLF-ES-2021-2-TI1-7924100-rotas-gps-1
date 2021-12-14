@@ -22,17 +22,6 @@ function generateUUID() {
 }
 
 var usuarioCorrente = JSON.parse(localStorage.getItem("usuarioCorrente"));
-if (!usuarioCorrente)
-    usuarioCorrente = {
-        id: "",
-        username: "",
-        nome: "",
-        sobrenome: "",
-        senha: "",
-        email: "",
-        endereco: "",
-        pontos: 0,
-    };
 
 // Obtem a string JSON com os dados de usuários a partir do localStorage
 var usuariosJSON = JSON.parse(localStorage.getItem("db_usuarios"));
@@ -47,6 +36,7 @@ if (!usuariosJSON) {
             email: "",
             endereco: "",
             pontos: 0,
+            endCadastrados: 0
         }, ],
     };
     localStorage.setItem("db_usuarios", JSON.stringify(usuariosJSON));
@@ -68,6 +58,7 @@ function loginUser(username, senha) {
             usuarioCorrente.senha = usuario.senha;
             usuarioCorrente.endereco = usuario.address;
             usuarioCorrente.pontos = usuario.pontos;
+            usuarioCorrente.endCadastrados = usuario.endCadastrados;
 
             // Salva os dados do usuário corrente no Session Storage, mas antes converte para string
             localStorage.setItem("usuarioCorrente", JSON.stringify(usuarioCorrente));
@@ -99,6 +90,7 @@ function addUser(username, nome, sobrenome, senha, email) {
         email: email,
         foto: "",
         pontos: 0,
+        endCadastrados: 0
     };
 
     // Insere o novo objeto no array
@@ -106,5 +98,5 @@ function addUser(username, nome, sobrenome, senha, email) {
 
     // Salva o novo banco de dados com o novo usuário no localStorage
     localStorage.setItem("db_usuarios", JSON.stringify(usuariosJSON));
-    localStorage.setItem("usuarioCorrente", JSON.stringify(usuariosJSON));
+    localStorage.setItem("usuarioCorrente", JSON.stringify(usuario));
 }

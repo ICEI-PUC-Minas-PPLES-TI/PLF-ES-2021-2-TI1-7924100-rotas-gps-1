@@ -204,6 +204,11 @@ function deletePergunta(classNome) {
         usuariosJSON.user[index].pontos -= PNTS_Pergunta;
         user.pontos -= PNTS_Pergunta;
 
+        if (user.pontos < 0) {
+            usuariosJSON.user[index].pontos = 0;
+            user.pontos = 0;
+        }
+
         // Atualiza os pontos no Local Storage
         localStorage.setItem('db_usuarios', JSON.stringify(usuariosJSON));
         localStorage.setItem('usuarioCorrente', JSON.stringify(user));
@@ -227,6 +232,11 @@ function deleteResp(classNome, respId) {
     if (user.pontos > 0) {
         usuariosJSON.user[index].pontos -= PNTS_Resposta;
         user.pontos -= PNTS_Resposta;
+
+        if (user.pontos < 0) {
+            usuariosJSON.user[index].pontos = 0;
+            user.pontos = 0;
+        }
 
         // Atualiza os pontos no Local Storage
         localStorage.setItem('db_usuarios', JSON.stringify(usuariosJSON));

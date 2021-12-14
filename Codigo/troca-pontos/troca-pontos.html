@@ -12,12 +12,15 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/c89ded80b6.js" crossorigin="anonymous"></script>
@@ -34,33 +37,30 @@
             <a id="logo" href="#">
                 <img src="./svg/Logo-Klug-2-branco.svg" id="logo-menu" alt="Logo">
                 <span id="nomelogo">KLUG </span>
-                <span id="localpagina">| Perfil</span>
+                <span id="localpagina">| Troca de Pontos</span>
             </a>
             <nav id="nav">
-                <button onclick="toggleMenu()" id="btn-mobile" aria-controls="menu" aria-haspopup="true"
-                    aria-label="Abrir Menu"><span id="hamburguer"></span></button>
+                <button onclick="toggleMenu()" id="btn-mobile" aria-controls="menu" aria-haspopup="true" aria-label="Abrir Menu"><span id="hamburguer"></span></button>
                 <ul id="menu" role="menu">
                     <li><a href="../rotas/rotas.html">Home</a>
                         <i class="bx bxs-home"></i>
                     </li>
-                    <li><a href="../add-endereco/index.html">Adicionar Endereço</a> <i
-                            class="fas fa-map-marker-alt"></i></li>
-                    <li><a id="loginTrocaPonto" href="../troca-pontos/troca-pontos.html">Trocar Pontos</a> <i
-                            class="fas fa-ticket-alt"></i></li>
-                    <li><a href="../suporte/pagina-inicial/pagina-inicial.html">Suporte</a> <i
-                            class="fas fa-wrench"></i></li>
+                    <li><a href="../add-endereco/index.html">Adicionar Endereço</a> <i class="fas fa-map-marker-alt"></i></li>
+                    <li><a href="../suporte/pagina-inicial/pagina-inicial.html">Suporte</a> <i class="fas fa-wrench"></i></li>
+                    <li>
+                        <a id="loginProfile" href=""> </a><i class="fas fa-user"></i></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <header>
+    <header class="subCabecalho">
         <div class="container-header">
             <img id="foto-usuario" alt="Foto de perfil do usuário">
             <h1 id="nome-usuario"></h1>
         </div>
     </header>
-    <section>
+    <section class="main">
         <header class="header-pontos">
             <h1>Troca de pontos</h1>
             <p>Troque seus pontos por recompensas em nossa plataforma</p>
@@ -72,7 +72,7 @@
         <section id="container-itens">
         </section>
     </section>
-    <footer class="footer-container">
+    <footer class="footer footer-container">
         <p>Copyright © 2021</p>
         <p><strong>Klug</strong>, sua melhor rota</p>
         </p>
