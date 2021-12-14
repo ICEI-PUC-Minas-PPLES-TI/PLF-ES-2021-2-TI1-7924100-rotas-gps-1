@@ -92,6 +92,40 @@ inicial sem a pergunta apagada
 - Melhor rota exibida para aquele filtro selecionado
 
 ## Teste - Adicionar endereço
+- Passo a passo:
+> - Clicar no botão “Adicionar
+Endereço”
+> - Preencher os campos
+corretamente
+> - Clicar no botão “Adicionar”
+> Após adicionar um novo endereço, o sistema deverá
+mostrar na tela inicial um novo marcador correspondente
+ao endereço
+
+## Teste - Editar marcador do mapa
+- Passo a passo:
+> - Clicar em um marcador no
+mapa
+- Quando clicado em um marcador qualquer, o sistema
+deverá mostrar as informações correspondentes ao
+endereço cadastrado
+> - Clicar no botão “Editar
+informações”
+> - Preencher os campos
+corretamente
+> - Clicar no botão “Confirmar”
+- Após fazer as alterações e clicar no botão “Confirmar”, o
+sistema deverá mostrar o endereço editado na tela
+inicial
+
+## Teste - Apagar marcador do mapa
+- Passo a passo:
+> - Clicar um marcador
+> - Clicar em “Editar
+informações”
+> - Clicar no botão “Apagar”
+- Após clicar no botão “Apagar”, o sistema deverá mostrar
+na tela inicial o endereço e, portanto, o marcador editados
 
 ## Avaliação
 
