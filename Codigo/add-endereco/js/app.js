@@ -458,6 +458,12 @@ function deleteAddress(id) {
         if (userLogin.pontos > 0) {
             usuariosJSON.user[index].pontos -= PNTS_AddAddress;
             userLogin.pontos -= PNTS_AddAddress;
+
+            if (userLogin.pontos < 0) {
+                usuariosJSON.user[index].pontos = 0;
+                userLogin.pontos = 0;
+            }
+
             usuariosJSON.user[index].endCadastrados = totalAddressCadastrados;
             userLogin.endCadastrados = totalAddressCadastrados;
 
