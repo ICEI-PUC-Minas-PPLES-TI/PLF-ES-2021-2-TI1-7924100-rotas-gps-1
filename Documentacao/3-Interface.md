@@ -4,7 +4,7 @@
 ## User Flow - Começo
 
 ![User Flow - Começo](../Artefatos/Design%20Thinking/images/../../Design%20Thinking/images/Rotas%20GPS%20-%20Como%20será%20a%20Jornada%20do%20Usuário.jpg)
-Começamos definindo como seria o fluxo do usuário quando ele entrasse no Klug. Definimos isso e começamos a fazer rascunho no Miro.
+Foi definido como seria o fluxo do usuário quando ele entrasse no Klug. Decidido isso, iniciou-se o rascunho no Miro.
 
 ## User Flow
 
@@ -15,12 +15,12 @@ Começamos definindo como seria o fluxo do usuário quando ele entrasse no Klug.
 > para alinhar os caminhos e as possíveis ações que o usuário pode
 > fazer junto com os membros de sua equipe.
 
-Depois de terminarmos os rascunhos, definimos como seria o User Flow dentro do Klug.
+Finalizados os rascunhos, foi definido como seria o User Flow dentro do Klug.
 
 ## Referências para o Klug
 
 ![Referências para o Klug](../Artefatos/Design%20Thinking/images/../../Design%20Thinking/images/Rotas%20GPS%20-%20Referências%20de%20app.jpg)
-Com o User Flow definido, buscamos referências de interface e funcionalidades para nosso aplicativo.
+Com o User Flow definido, foram buscadas referências de interface e funcionalidades para o aplicativo.
 
 ## Sketches para criação da Interface
 
@@ -29,7 +29,7 @@ Sketch usada como base para a prototipação do projeto.
 
 ## Wireframes
 
- Para o nosso projeto, pensamos inicialmente em fazer dois fluxos do usuário para usar nossa aplicação.
+ Para o Klug, foi pensado inicialmente em criar dois fluxos do usuário para usar a aplicação.
 
 - No primeiro fluxo, o usuário pode editar sua rota antes mesmo de ser criada. É útil nos casos em que o usuário já conhece a região e não quer passar por ali por algum motivo.
 - No segundo fluxo, o usuário cria sua rota e após ela ser criada ele tem as opções de seguir automaticamente com a rota feita pela aplicação ou marcar alguma área caso não queira passar naquela região.
@@ -101,12 +101,13 @@ Sketch usada como base para a prototipação do projeto.
 - [ ] Avisar quando houver alagamento de alguma região
 - [ ] Criar o Klug Community, uma comunidade de usuários colaboradores de feedbacks do mapa
 - [ ] Gamificar a aplicação
+- [ ] Colocar a barra lateral com informações mais detalhadas sobre a rota
 
 * * *
 
 ## Links
 
- Caso queira ver nosso protótipo, ver sua apresentação e nosso mural no miro, eles podem ser acesados pelo link a seguir
+ Caso queira ver o protótipo, ver a apresentação dele e o mural do projeto no Miro, eles podem ser acessados pelos links a seguir:
 
 - [***Protótipo***](https://www.figma.com/file/1IGCD2fJ4EiFWup2q1DN7J/Rotas-GPS?node-id=0%3A1)
 - [***Apresentação do Figma***](https://www.figma.com/proto/1IGCD2fJ4EiFWup2q1DN7J/Rotas-GPS?node-id=12%3A5&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=12%3A5)
