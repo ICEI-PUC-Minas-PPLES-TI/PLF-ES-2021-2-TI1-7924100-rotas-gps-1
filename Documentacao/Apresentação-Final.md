@@ -12,7 +12,7 @@
 
 ## Conjunto de Slides (Estrutura)
 
-![Slide 1](./images/SlideFInal(1).jpg
+![Slide 1](./images/SlideFInal(1).jpg)
 
 ![Slide 2](./images/SlideFinal(2).jpg)
 
