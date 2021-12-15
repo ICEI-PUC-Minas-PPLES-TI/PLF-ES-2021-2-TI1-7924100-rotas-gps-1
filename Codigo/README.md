@@ -8,13 +8,18 @@ Após isso, as páginas foram desenvolvidas e enviadas nas Sprints 2 e 3, onde c
 
 Um breve resumo do que se trata as página contidas neste diretório. Informações adicionais podem ser encontradas em [Gerenciamento de Projeto](../Documentacao/5-Gerenciamento-Projeto.md).
 
+## **Login**
+
+ Página de Login da nossa aplicação. Dentro dela se encontram tanto a página de login para usuários já cadastrados na plataforma como também a página de cadastro para novos usuários.
+
 ## **add-endereço**
 
  Página para adicionar novos estabelecimentos no mapa, com informações de endereço, horário de funcionamento, descrição, site e nome.
 
-## **Login**
+## **marcacao-mapas**
 
- Página de Login da nossa aplicação. Dentro dela se encontram tanto a página de login para usuários já cadastrados na plataforma como também a página de cadastro para novos usuários.
+ Página de marcação de áreas perigosas no mapa. Nela é possível criar marcações personalizadas que ficarão visíveis no mapa.
+ <br>Obs.: Devido a complexidade do código JavaScript, esse projeto foi descontinuado.
 
 ## **perfil**
 
