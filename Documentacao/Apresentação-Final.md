@@ -31,6 +31,3 @@
 ![Slide 9](./images/SlideFinal(9).jpg)
 
 ![Slide 10](./images/SlideFinal(10).jpg)
-
-
-

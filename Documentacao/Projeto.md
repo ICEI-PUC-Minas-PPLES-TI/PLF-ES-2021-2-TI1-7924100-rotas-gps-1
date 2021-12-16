@@ -2,7 +2,7 @@
 
 `Klug`  
 
-Trabalho Interdisciplinar - Aplicacões Web
+Trabalho Interdisciplinar - Aplicações Web
 
 `Engenharia de Software`
 
