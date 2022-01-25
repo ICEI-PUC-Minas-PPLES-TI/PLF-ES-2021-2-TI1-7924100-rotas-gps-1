@@ -1,0 +1,27 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: Rotas GPS
+authors:
+  - family-names: Jost Andrade
+    given-names: Daniel 
+  - family-names: dos Santos Ferreira de Andrade 
+    given-names: Frederico  
+  - family-names: de Oliveira Martins dos Santos
+    given-names: Igor  
+  - family-names: Vieira Louret
+    given-names: Nikolas Augusto 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Dias Ferreira da Rocha
+    given-names: Roberto Felipe 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Vieira Carneiro
+    given-names: Rommel 
+keywords:
+  - Rotas
+  - GPS
+repository-code: https://github.com/ICEI-PUC-Minas-PPLES-TI/PLF-ES-2021-2-TI1-7924100-rotas-gps-1
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2021-12-22
